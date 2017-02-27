@@ -9,9 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -39,7 +37,5 @@ class DetailViewController: UIViewController {
             self.configureView()
         }
     }
-
-
 }
 

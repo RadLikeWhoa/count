@@ -6,4 +6,21 @@
 //
 //
 
-import Foundation
+import UIKit
+
+class Counter {
+    fileprivate let title: String
+    fileprivate var counter: Int = 0
+    
+    init(title: String) {
+        self.title = title
+    }
+    
+    public func increment() {
+        self.counter += 1
+    }
+    
+    public func decrement() {
+        self.counter -= 1
+    }
+}
