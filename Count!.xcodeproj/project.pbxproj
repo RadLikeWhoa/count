@@ -15,6 +15,7 @@
 		99C89FDE1E604713006D4398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C89FDC1E604713006D4398 /* Main.storyboard */; };
 		99C89FE01E604713006D4398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C89FDF1E604713006D4398 /* Assets.xcassets */; };
 		99C89FE31E604713006D4398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C89FE11E604713006D4398 /* LaunchScreen.storyboard */; };
+		99CE2C341E65F12900723BDA /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		99C89FDF1E604713006D4398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99C89FE21E604713006D4398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99C89FE41E604713006D4398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				99C89FE41E604713006D4398 /* Info.plist */,
 				99716C281E647B7F0016FEA6 /* Counter.swift */,
 				99716C2A1E647D2F0016FEA6 /* EditViewController.swift */,
+				99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */,
 			);
 			path = "Count!";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				99716C2B1E647D2F0016FEA6 /* EditViewController.swift in Sources */,
 				99716C291E647B7F0016FEA6 /* Counter.swift in Sources */,
+				99CE2C341E65F12900723BDA /* CounterTableViewCell.swift in Sources */,
 				99C89FDB1E604713006D4398 /* DetailViewController.swift in Sources */,
 				99C89FD91E604713006D4398 /* MasterViewController.swift in Sources */,
 				99C89FD71E604713006D4398 /* AppDelegate.swift in Sources */,

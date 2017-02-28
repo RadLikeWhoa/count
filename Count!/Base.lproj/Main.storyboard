@@ -137,10 +137,19 @@
                                 <action selector="cancelEdit:" destination="mbV-rd-ejx" id="fKS-ZV-NhQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8c7-wp-m3F"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8c7-wp-m3F">
+                            <connections>
+                                <action selector="saveCounter:" destination="mbV-rd-ejx" id="ZYO-Qm-1RM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="titleTextField" destination="hOe-bE-wwp" id="Aug-ZT-xwa"/>
+                        <segue destination="UMY-Mw-MoH" kind="unwind" identifier="unwindToMaster" unwindAction="unwindWithSegue:" id="1os-M4-q8o"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgA-CE-tPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UMY-Mw-MoH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2289" y="-278"/>
         </scene>
@@ -153,11 +162,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="88" id="WCw-Qf-5nD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="88" id="WCw-Qf-5nD" customClass="CounterTableViewCell" customModule="Count_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="375" height="87"/>
+                                    <frame key="frameInset" width="375" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9h-T1-qYR">
@@ -178,12 +187,18 @@
                                                 <constraint firstAttribute="width" secondItem="UVa-9W-0dQ" secondAttribute="height" multiplier="1:1" id="kAJ-80-yPi"/>
                                             </constraints>
                                             <state key="normal" title="-"/>
+                                            <connections>
+                                                <action selector="decrement:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Jcs-2d-k6l"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-Uk-eTn">
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="nXu-Uk-eTn" secondAttribute="height" multiplier="1:1" id="G15-ia-3A5"/>
                                             </constraints>
                                             <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="increment:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Pqq-KD-VNb"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -204,6 +219,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="countLabel" destination="2au-jV-6iy" id="hJL-yh-589"/>
+                                    <outlet property="titleLabel" destination="W9h-T1-qYR" id="x8u-WD-XVN"/>
                                     <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="Hat-8B-JqO"/>
                                 </connections>
                             </tableViewCell>

@@ -12,13 +12,14 @@ class EditViewController: UITableViewController {
     
     var counter: Counter? {
         didSet {
-            isNew = false
             self.navigationItem.title = "Edit: \(counter?.title)"
         }
     }
     
     var isNew = true
 
+    @IBOutlet weak var titleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +30,16 @@ class EditViewController: UITableViewController {
         dismiss(animated: true) {
             self.counter = nil
         }
+    }
+    
+    @IBAction func saveCounter(_ sender: AnyObject) {
+        if (isNew) {
+            counter = Counter.init(id: 0, title: titleTextField.text!)
+        } else {
+            counter?.title = titleTextField.text!
+        }
+        
+        performSegue(withIdentifier: "unwindToMaster", sender: self)
     }
 
 }

@@ -37,6 +37,24 @@ class MasterViewController: UITableViewController {
                 let controller = segue.destination as! DetailViewController
                 controller.counter = object
             }
+        } else if segue.identifier == "addItem" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! EditViewController
+            controller.isNew = true
+        }
+    }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        if segue.identifier == "unwindToMaster" {
+            let source = segue.source as! EditViewController
+            
+            if (source.isNew) {
+                objects.insert(source.counter!, at: 0)
+                
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+            } else {
+                // update
+            }
         }
     }
 
@@ -51,15 +69,20 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        let object = objects[indexPath.row]
-        cell.textLabel!.text = object.title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CounterTableViewCell
+        let counter = objects[indexPath.row]
+        
+        cell.counter = counter
+        
         return cell
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 88
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -70,5 +93,6 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
 }
 
