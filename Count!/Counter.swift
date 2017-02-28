@@ -9,8 +9,9 @@
 import UIKit
 
 class Counter {
-    fileprivate let id: Int
-    fileprivate let title: String
+    final let id: Int
+    final let title: String
+    
     fileprivate var counter: Int = 0
     
     init(id: Int, title: String) {
@@ -24,10 +25,6 @@ class Counter {
     
     public func decrement() {
         self.counter -= 1
-    }
-    
-    public func getTitle() -> String {
-        return self.title
     }
     
     public func getCounter() -> Int {
