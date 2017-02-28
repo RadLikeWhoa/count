@@ -8,7 +8,16 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+class EditViewController: UITableViewController {
+    
+    var counter: Counter? {
+        didSet {
+            isNew = false
+            self.navigationItem.title = "Edit: \(counter?.getTitle())"
+        }
+    }
+    
+    var isNew = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +28,12 @@ class EditViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func cancelEdit(_ sender: AnyObject) {
+        dismiss(animated: true) {
+            self.counter = nil
+        }
     }
     
 

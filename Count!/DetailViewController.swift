@@ -37,5 +37,9 @@ class DetailViewController: UIViewController {
             self.configureView()
         }
     }
+    
+    @IBAction func editItem(_ sender: AnyObject) {
+        performSegue(withIdentifier: "editItem", sender: nil)
+    }
 }
 

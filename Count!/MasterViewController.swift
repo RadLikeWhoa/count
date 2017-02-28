@@ -30,9 +30,10 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
+        performSegue(withIdentifier: "addItem", sender: nil)
+        /* objects.insert(NSDate(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.insertRows(at: [indexPath], with: .automatic)
+        self.tableView.insertRows(at: [indexPath], with: .automatic) */
     }
 
     // MARK: - Segues
