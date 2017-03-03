@@ -12,11 +12,7 @@ class ColorPickerTableViewController: UITableViewController {
     
     var selectedColor: Color?
     
-    let availableColors: [Color] = [
-        Color(label: "Sha La La", startColor: UIColor(red: 0.886, green: 0.584, blue: 0.529, alpha: 1.00), endColor: UIColor(red: 0.839, green: 0.427, blue: 0.459, alpha: 1.00)),
-        Color(label: "Under The Lake", startColor: UIColor(red: 0.137, green: 0.478, blue: 0.341, alpha: 1.00), endColor: UIColor(red: 0.035, green: 0.188, blue: 0.157, alpha: 1.00)),
-        Color(label: "Solid Vault", startColor: UIColor(red: 0.227, green: 0.482, blue: 0.835, alpha: 1.00), endColor: UIColor(red: 0.227, green: 0.376, blue: 0.451, alpha: 1.00))
-    ]
+    let availableColors: [Color] = Color.availableColors
     
     // MARK: - Table view events
     

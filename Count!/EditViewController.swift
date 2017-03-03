@@ -12,7 +12,14 @@ class EditViewController: UITableViewController {
     
     var counter: Counter? {
         didSet {
-            self.navigationItem.title = "Edit: \(counter?.title)"
+            if let counter = counter {
+                if !isNew {
+                    self.navigationItem.title = "Edit: \(counter.title)"
+                }
+
+                self.titleTextField.text = counter.title
+                colorize(color: counter.color)
+            }
         }
     }
     
@@ -20,10 +27,33 @@ class EditViewController: UITableViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var colorPreview: UIView!
+    @IBOutlet weak var colorName: UILabel!
+    
+    override func viewDidLoad() {
+        if isNew {
+            counter = Counter(title: "Untitled")
+        }
+    }
     
     @IBAction func cancelEdit(_ sender: AnyObject) {
         dismiss(animated: true) {
             self.counter = nil
+        }
+    }
+    
+    private func colorize(color: Color) {
+        let gradient = CAGradientLayer()
+        
+        gradient.colors = [color.startColor.cgColor, color.endColor.cgColor]
+        gradient.frame = colorPreview.bounds
+        gradient.cornerRadius = 5
+        
+        colorName.text = color.label
+        
+        if colorPreview.layer.sublayers?[0] is CAGradientLayer {
+            colorPreview.layer.replaceSublayer((colorPreview.layer.sublayers?[0])!, with: gradient)
+        } else {
+            colorPreview.layer.insertSublayer(gradient, at: 0)
         }
     }
     
@@ -48,13 +78,7 @@ class EditViewController: UITableViewController {
                     counter.color = color
                 }
                 
-                let gradient = CAGradientLayer()
-                
-                gradient.colors = [color.startColor.cgColor, color.endColor.cgColor]
-                gradient.frame = colorPreview.bounds
-                gradient.cornerRadius = 5
-                
-                colorPreview.layer.insertSublayer(gradient, at: 0)
+                colorize(color: color)
             }
         }
     }

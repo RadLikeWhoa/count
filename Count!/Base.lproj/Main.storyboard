@@ -189,14 +189,24 @@
                                                         <constraint firstAttribute="width" secondItem="CeI-BA-6K8" secondAttribute="height" multiplier="1:1" id="bBP-0R-5Lz"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCN-qy-t37">
+                                                    <rect key="frame" x="118.66666666666666" y="14.000000000000002" width="242.33333333333334" height="15.66666666666667"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="CeI-BA-6K8" firstAttribute="top" secondItem="ptT-fp-Nxt" secondAttribute="top" constant="6" id="7OI-Fx-efb"/>
                                                 <constraint firstItem="CeI-BA-6K8" firstAttribute="leading" secondItem="iSj-9v-LNp" secondAttribute="trailing" constant="22" id="Ia9-SE-3MR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wCN-qy-t37" secondAttribute="trailing" constant="12" id="LWr-S5-OZH"/>
+                                                <constraint firstItem="wCN-qy-t37" firstAttribute="top" secondItem="ptT-fp-Nxt" secondAttribute="topMargin" constant="6" id="PEw-lj-CN9"/>
                                                 <constraint firstItem="iSj-9v-LNp" firstAttribute="top" secondItem="ptT-fp-Nxt" secondAttribute="topMargin" constant="3" id="PH0-X3-LsM"/>
                                                 <constraint firstAttribute="bottom" secondItem="CeI-BA-6K8" secondAttribute="bottom" constant="6" id="Xjc-XT-aDG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wCN-qy-t37" secondAttribute="bottom" constant="6" id="fBh-JY-Ijb"/>
                                                 <constraint firstItem="iSj-9v-LNp" firstAttribute="leading" secondItem="ptT-fp-Nxt" secondAttribute="leadingMargin" constant="12" id="hCd-DI-4RR"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="iSj-9v-LNp" secondAttribute="bottom" constant="3" id="n9w-Ye-M4S"/>
+                                                <constraint firstItem="wCN-qy-t37" firstAttribute="leading" secondItem="CeI-BA-6K8" secondAttribute="trailing" constant="12" id="pdK-tf-aGb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -224,6 +234,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="colorName" destination="wCN-qy-t37" id="6hE-lU-1bc"/>
                         <outlet property="colorPreview" destination="CeI-BA-6K8" id="h6D-E0-gdT"/>
                         <outlet property="titleTextField" destination="hOe-bE-wwp" id="Aug-ZT-xwa"/>
                         <segue destination="UMY-Mw-MoH" kind="unwind" identifier="unwindToMaster" unwindAction="unwindWithSegue:" id="1os-M4-q8o"/>

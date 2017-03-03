@@ -8,15 +8,15 @@
 
 class Counter {
     
-    var id: Int
     var title: String
+    var offset: Int
     var color: Color
     
     fileprivate var counter: Int = 0
     
-    init(id: Int, title: String, color: Color) {
-        self.id = id
+    init(title: String, offset: Int = 0, color: Color = Color.availableColors[0]) {
         self.title = title
+        self.offset = offset
         self.color = color
     }
     
