@@ -16,6 +16,9 @@
 		99C89FE01E604713006D4398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C89FDF1E604713006D4398 /* Assets.xcassets */; };
 		99C89FE31E604713006D4398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C89FE11E604713006D4398 /* LaunchScreen.storyboard */; };
 		99CE2C341E65F12900723BDA /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */; };
+		C2C6BCF41E69BA18005C4AB3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6BCF31E69BA18005C4AB3 /* Color.swift */; };
+		C2C6BCF61E69BAB4005C4AB3 /* ColorPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */; };
+		C2C6BCF81E69BEAA005C4AB3 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		99C89FE21E604713006D4398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99C89FE41E604713006D4398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
+		C2C6BCF31E69BA18005C4AB3 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerTableViewController.swift; sourceTree = "<group>"; };
+		C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				99716C281E647B7F0016FEA6 /* Counter.swift */,
 				99716C2A1E647D2F0016FEA6 /* EditViewController.swift */,
 				99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */,
+				C2C6BCF31E69BA18005C4AB3 /* Color.swift */,
+				C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */,
+				C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */,
 			);
 			path = "Count!";
 			sourceTree = "<group>";
@@ -149,7 +158,10 @@
 			files = (
 				99716C2B1E647D2F0016FEA6 /* EditViewController.swift in Sources */,
 				99716C291E647B7F0016FEA6 /* Counter.swift in Sources */,
+				C2C6BCF41E69BA18005C4AB3 /* Color.swift in Sources */,
+				C2C6BCF61E69BAB4005C4AB3 /* ColorPickerTableViewController.swift in Sources */,
 				99CE2C341E65F12900723BDA /* CounterTableViewCell.swift in Sources */,
+				C2C6BCF81E69BEAA005C4AB3 /* ColorTableViewCell.swift in Sources */,
 				99C89FDB1E604713006D4398 /* DetailViewController.swift in Sources */,
 				99C89FD91E604713006D4398 /* MasterViewController.swift in Sources */,
 				99C89FD71E604713006D4398 /* AppDelegate.swift in Sources */,

@@ -19,12 +19,7 @@ class EditViewController: UITableViewController {
     var isNew = true
 
     @IBOutlet weak var titleTextField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    @IBOutlet weak var colorPreview: UIView!
     
     @IBAction func cancelEdit(_ sender: AnyObject) {
         dismiss(animated: true) {
@@ -34,12 +29,34 @@ class EditViewController: UITableViewController {
     
     @IBAction func saveCounter(_ sender: AnyObject) {
         if (isNew) {
-            counter = Counter.init(id: 0, title: titleTextField.text!)
+            // counter = Counter.init(id: 0, title: titleTextField.text!, color: UIColor.red)
         } else {
             counter?.title = titleTextField.text!
         }
         
         performSegue(withIdentifier: "unwindToMaster", sender: self)
+    }
+    
+    // MARK: - Segues
+    
+    @IBAction func unwindToEdit(segue: UIStoryboardSegue) {
+        if segue.identifier == "unwindToEdit" {
+            let controller = segue.source as! ColorPickerTableViewController
+            
+            if let color = controller.selectedColor {
+                if let counter = counter {
+                    counter.color = color
+                }
+                
+                let gradient = CAGradientLayer()
+                
+                gradient.colors = [color.startColor.cgColor, color.endColor.cgColor]
+                gradient.frame = colorPreview.bounds
+                gradient.cornerRadius = 5
+                
+                colorPreview.layer.insertSublayer(gradient, at: 0)
+            }
+        }
     }
 
 }

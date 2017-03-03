@@ -10,12 +10,14 @@ class Counter {
     
     var id: Int
     var title: String
+    var color: Color
     
     fileprivate var counter: Int = 0
     
-    init(id: Int, title: String) {
+    init(id: Int, title: String, color: Color) {
         self.id = id
         self.title = title
+        self.color = color
     }
     
     public func increment() {
