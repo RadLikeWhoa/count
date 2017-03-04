@@ -26,7 +26,7 @@ class EditViewController: UITableViewController {
     
     override func viewDidLoad() {
         if isNew {
-            counter = Counter(title: "")
+            counter = Counter()
         }
         
         configureView()

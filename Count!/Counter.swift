@@ -13,7 +13,7 @@ class Counter {
     
     fileprivate var counter: Int = 0
     
-    init(title: String, color: Color = Color.availableColors[0]) {
+    init(title: String = "", color: Color = Color.availableColors[0]) {
         self.title = title
         self.color = color
     }
