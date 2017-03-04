@@ -109,10 +109,13 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hOe-bE-wwp">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Untitled" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hOe-bE-wwp">
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="titleTextChanged:" destination="mbV-rd-ejx" eventType="editingChanged" id="o6B-UO-72q"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -133,12 +136,12 @@
                                             <frame key="frameInset" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-ew-iSn">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-ew-iSn">
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRN-4r-hd4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRN-4r-hd4">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="33" id="2sQ-BY-6dp"/>
                                                     </constraints>
@@ -216,7 +219,7 @@
                                 <action selector="cancelEdit:" destination="mbV-rd-ejx" id="fKS-ZV-NhQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8c7-wp-m3F">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="8c7-wp-m3F">
                             <connections>
                                 <action selector="saveCounter:" destination="mbV-rd-ejx" id="ZYO-Qm-1RM"/>
                             </connections>
@@ -226,6 +229,7 @@
                         <outlet property="colorName" destination="wCN-qy-t37" id="6hE-lU-1bc"/>
                         <outlet property="colorPreview" destination="CeI-BA-6K8" id="h6D-E0-gdT"/>
                         <outlet property="offsetTextField" destination="dqe-ew-iSn" id="3KX-TA-VCy"/>
+                        <outlet property="saveButton" destination="8c7-wp-m3F" id="yHJ-di-iBH"/>
                         <outlet property="titleTextField" destination="hOe-bE-wwp" id="Aug-ZT-xwa"/>
                         <segue destination="UMY-Mw-MoH" kind="unwind" identifier="unwindToMaster" unwindAction="unwindWithSegue:" id="1os-M4-q8o"/>
                     </connections>

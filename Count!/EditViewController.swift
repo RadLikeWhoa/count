@@ -12,14 +12,7 @@ class EditViewController: UITableViewController {
     
     var counter: Counter? {
         didSet {
-            if let counter = counter {
-                if !isNew {
-                    self.navigationItem.title = "Edit: \(counter.title)"
-                }
-
-                self.titleTextField.text = counter.title
-                colorize(color: counter.color)
-            }
+            configureView()
         }
     }
     
@@ -29,11 +22,35 @@ class EditViewController: UITableViewController {
     @IBOutlet weak var offsetTextField: UITextField!
     @IBOutlet weak var colorPreview: GradientView!
     @IBOutlet weak var colorName: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
-        if self.isNew {
-            self.counter = Counter(title: "Untitled")
+        if isNew {
+            counter = Counter(title: "")
         }
+        
+        configureView()
+    }
+    
+    func configureView() {
+        if let counter = counter {
+            if !isNew {
+                navigationItem.title = "Edit: \(counter.title)"
+                
+                if let offsetTextField = offsetTextField {
+                    offsetTextField.text = "\(counter.getCounter())"
+                    offsetTextField.isEnabled = false
+                }
+            }
+            
+            if let titleTextField = titleTextField {
+                titleTextField.text = counter.title
+                saveButton.isEnabled = !(titleTextField.text?.isEmpty)!
+            }
+            
+            colorize(color: counter.color)
+        }
+
     }
     
     @IBAction func cancelEdit(_ sender: AnyObject) {
@@ -41,18 +58,30 @@ class EditViewController: UITableViewController {
     }
     
     private func colorize(color: Color) {
-        colorName.text = color.label
-        colorPreview.color = color
+        if let colorName = colorName {
+            colorName.text = color.label
+        }
+        
+        if let colorPreview = colorPreview {
+            colorPreview.color = color
+        }
     }
     
     @IBAction func saveCounter(_ sender: AnyObject) {
         if self.isNew {
-            // counter = Counter.init(id: 0, title: titleTextField.text!, color: UIColor.red)
+            counter?.title = titleTextField.text!
+            counter?.increment(value: Int(offsetTextField.text!)!)
         } else {
             counter?.title = titleTextField.text!
         }
         
         performSegue(withIdentifier: "unwindToMaster", sender: self)
+    }
+    
+    @IBAction func titleTextChanged(_ textField: UITextField) {
+        if let text = textField.text {
+            saveButton.isEnabled = !text.isEmpty
+        }
     }
     
     // MARK: - Segues

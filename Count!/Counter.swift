@@ -9,19 +9,17 @@
 class Counter {
     
     var title: String
-    var offset: Int
     var color: Color
     
     fileprivate var counter: Int = 0
     
-    init(title: String, offset: Int = 0, color: Color = Color.availableColors[0]) {
+    init(title: String, color: Color = Color.availableColors[0]) {
         self.title = title
-        self.offset = offset
         self.color = color
     }
     
-    public func increment() {
-        counter += 1
+    public func increment(value: Int = 1) {
+        counter += value
     }
     
     public func decrement() {

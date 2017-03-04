@@ -33,5 +33,15 @@ class DetailViewController: UIViewController {
         performSegue(withIdentifier: "editItem", sender: nil)
     }
     
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editItem" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! EditViewController
+            controller.isNew = false
+            controller.counter = counter
+        }
+    }
+    
 }
 
