@@ -21,17 +21,17 @@ class Counter {
     }
     
     public func increment() {
-        self.counter += 1
+        counter += 1
     }
     
     public func decrement() {
-        if self.counter > 0 {
-            self.counter -= 1
+        if counter > 0 {
+            counter -= 1
         }
     }
     
     public func getCounter() -> Int {
-        return self.counter
+        return counter
     }
     
 }

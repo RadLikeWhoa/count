@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		99716C291E647B7F0016FEA6 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C281E647B7F0016FEA6 /* Counter.swift */; };
 		99716C2B1E647D2F0016FEA6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C2A1E647D2F0016FEA6 /* EditViewController.swift */; };
+		99C2F19B1E6A3E4D001A9946 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C2F19A1E6A3E4D001A9946 /* GradientView.swift */; };
 		99C89FD71E604713006D4398 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C89FD61E604713006D4398 /* AppDelegate.swift */; };
 		99C89FD91E604713006D4398 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C89FD81E604713006D4398 /* MasterViewController.swift */; };
 		99C89FDB1E604713006D4398 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C89FDA1E604713006D4398 /* DetailViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		99716C281E647B7F0016FEA6 /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		99716C2A1E647D2F0016FEA6 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		99C2F19A1E6A3E4D001A9946 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		99C89FD31E604713006D4398 /* Count!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Count!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C89FD61E604713006D4398 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99C89FD81E604713006D4398 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				C2C6BCF31E69BA18005C4AB3 /* Color.swift */,
 				C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */,
 				C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */,
+				99C2F19A1E6A3E4D001A9946 /* GradientView.swift */,
 			);
 			path = "Count!";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			files = (
 				99716C2B1E647D2F0016FEA6 /* EditViewController.swift in Sources */,
 				99716C291E647B7F0016FEA6 /* Counter.swift in Sources */,
+				99C2F19B1E6A3E4D001A9946 /* GradientView.swift in Sources */,
 				C2C6BCF41E69BA18005C4AB3 /* Color.swift in Sources */,
 				C2C6BCF61E69BAB4005C4AB3 /* ColorPickerTableViewController.swift in Sources */,
 				99CE2C341E65F12900723BDA /* CounterTableViewCell.swift in Sources */,

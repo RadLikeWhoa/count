@@ -14,10 +14,10 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        navigationItem.leftBarButtonItem = editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        self.navigationItem.rightBarButtonItem = addButton
+        navigationItem.rightBarButtonItem = addButton
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +51,7 @@ class MasterViewController: UITableViewController {
                 objects.insert(source.counter!, at: 0)
                 
                 let indexPath = IndexPath(row: 0, section: 0)
-                self.tableView.insertRows(at: [indexPath], with: .automatic)
+                tableView.insertRows(at: [indexPath], with: .automatic)
             } else {
                 // update
             }

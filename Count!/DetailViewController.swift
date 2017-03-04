@@ -9,23 +9,24 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var counter: Counter? {
+        didSet {
+            self.configureView()
+        }
+    }
+    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
     func configureView() {
-        if let detail = self.counter {
+        if let detail = counter {
             navigationItem.title = detail.title
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureView()
-    }
-    
-    var counter: Counter? {
-        didSet {
-            self.configureView()
-        }
+        configureView()
     }
     
     @IBAction func editItem(_ sender: AnyObject) {

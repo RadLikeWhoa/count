@@ -26,39 +26,27 @@ class EditViewController: UITableViewController {
     var isNew = true
 
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var colorPreview: UIView!
+    @IBOutlet weak var offsetTextField: UITextField!
+    @IBOutlet weak var colorPreview: GradientView!
     @IBOutlet weak var colorName: UILabel!
     
     override func viewDidLoad() {
-        if isNew {
-            counter = Counter(title: "Untitled")
+        if self.isNew {
+            self.counter = Counter(title: "Untitled")
         }
     }
     
     @IBAction func cancelEdit(_ sender: AnyObject) {
-        dismiss(animated: true) {
-            self.counter = nil
-        }
+        dismiss(animated: true)
     }
     
     private func colorize(color: Color) {
-        let gradient = CAGradientLayer()
-        
-        gradient.colors = [color.startColor.cgColor, color.endColor.cgColor]
-        gradient.frame = colorPreview.bounds
-        gradient.cornerRadius = 5
-        
         colorName.text = color.label
-        
-        if colorPreview.layer.sublayers?[0] is CAGradientLayer {
-            colorPreview.layer.replaceSublayer((colorPreview.layer.sublayers?[0])!, with: gradient)
-        } else {
-            colorPreview.layer.insertSublayer(gradient, at: 0)
-        }
+        colorPreview.color = color
     }
     
     @IBAction func saveCounter(_ sender: AnyObject) {
-        if (isNew) {
+        if self.isNew {
             // counter = Counter.init(id: 0, title: titleTextField.text!, color: UIColor.red)
         } else {
             counter?.title = titleTextField.text!
@@ -80,6 +68,13 @@ class EditViewController: UITableViewController {
                 
                 colorize(color: color)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pickColor" {
+            titleTextField.resignFirstResponder()
+            offsetTextField.resignFirstResponder()
         }
     }
 
