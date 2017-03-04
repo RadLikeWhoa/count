@@ -18,6 +18,8 @@ class MasterViewController: UITableViewController {
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
+        
+        tableView.contentInset = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
