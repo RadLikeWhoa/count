@@ -51,6 +51,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99C2F19C1E6A40AF001A9946 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99716C281E647B7F0016FEA6 /* Counter.swift */,
+				C2C6BCF31E69BA18005C4AB3 /* Color.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		99C2F19D1E6A40C9001A9946 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				99C89FD81E604713006D4398 /* MasterViewController.swift */,
+				99C89FDA1E604713006D4398 /* DetailViewController.swift */,
+				99716C2A1E647D2F0016FEA6 /* EditViewController.swift */,
+				C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		99C2F19E1E6A40DD001A9946 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */,
+				C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */,
+				99C2F19A1E6A3E4D001A9946 /* GradientView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		99C89FCA1E604713006D4398 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +100,14 @@
 		99C89FD51E604713006D4398 /* Count! */ = {
 			isa = PBXGroup;
 			children = (
+				99C2F19C1E6A40AF001A9946 /* Model */,
+				99C2F19E1E6A40DD001A9946 /* View */,
+				99C2F19D1E6A40C9001A9946 /* Controller */,
 				99C89FD61E604713006D4398 /* AppDelegate.swift */,
-				99C89FD81E604713006D4398 /* MasterViewController.swift */,
-				99C89FDA1E604713006D4398 /* DetailViewController.swift */,
 				99C89FDC1E604713006D4398 /* Main.storyboard */,
 				99C89FDF1E604713006D4398 /* Assets.xcassets */,
 				99C89FE11E604713006D4398 /* LaunchScreen.storyboard */,
 				99C89FE41E604713006D4398 /* Info.plist */,
-				99716C281E647B7F0016FEA6 /* Counter.swift */,
-				99716C2A1E647D2F0016FEA6 /* EditViewController.swift */,
-				99CE2C331E65F12900723BDA /* CounterTableViewCell.swift */,
-				C2C6BCF31E69BA18005C4AB3 /* Color.swift */,
-				C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */,
-				C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */,
-				99C2F19A1E6A3E4D001A9946 /* GradientView.swift */,
 			);
 			path = "Count!";
 			sourceTree = "<group>";
