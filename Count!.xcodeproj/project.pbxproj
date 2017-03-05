@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991EC53C1E6C85440011494B /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EC53B1E6C85440011494B /* CounterButton.swift */; };
 		99716C291E647B7F0016FEA6 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C281E647B7F0016FEA6 /* Counter.swift */; };
 		99716C2B1E647D2F0016FEA6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C2A1E647D2F0016FEA6 /* EditViewController.swift */; };
 		99C2F19B1E6A3E4D001A9946 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C2F19A1E6A3E4D001A9946 /* GradientView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		991EC53B1E6C85440011494B /* CounterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		99716C281E647B7F0016FEA6 /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		99716C2A1E647D2F0016FEA6 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		99C2F19A1E6A3E4D001A9946 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		991EC53A1E6C84640011494B /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				991EC53B1E6C85440011494B /* CounterButton.swift */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
 		99C2F19C1E6A40AF001A9946 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		99C89FD51E604713006D4398 /* Count! */ = {
 			isa = PBXGroup;
 			children = (
+				991EC53A1E6C84640011494B /* Controls */,
 				99C2F19C1E6A40AF001A9946 /* Model */,
 				99C2F19E1E6A40DD001A9946 /* View */,
 				99C2F19D1E6A40C9001A9946 /* Controller */,
@@ -193,6 +204,7 @@
 				99C89FDB1E604713006D4398 /* DetailViewController.swift in Sources */,
 				99C89FD91E604713006D4398 /* MasterViewController.swift in Sources */,
 				99C89FD71E604713006D4398 /* AppDelegate.swift in Sources */,
+				991EC53C1E6C85440011494B /* CounterButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

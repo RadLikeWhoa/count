@@ -24,17 +24,17 @@ class CounterTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func decrement(_ sender: AnyObject) {
-        if let currentCounter = self.counter {
-            currentCounter.decrement()
-            countLabel.text = "\(currentCounter.getCounter())"
+    @IBAction func decrement(_ sender: UIButton) {
+        if let counter = counter {
+            counter.decrement()
+            countLabel.text = "\(counter.getCounter())"
         }
     }
     
-    @IBAction func increment(_ sender: AnyObject) {
-        if let currentCounter = self.counter {
-            currentCounter.increment()
-            countLabel.text = "\(currentCounter.getCounter())"
+    @IBAction func increment(_ sender: UIButton) {
+        if let counter = counter {
+            counter.increment()
+            countLabel.text = "\(counter.getCounter())"
         }
     }
     
