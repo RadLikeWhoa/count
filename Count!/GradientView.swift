@@ -15,6 +15,12 @@ class GradientView: UIView {
             configureView()
         }
     }
+    
+    @IBInspectable var cornerRadius: CGFloat = 5 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
 
     override open class var layerClass: AnyClass {
         get{
@@ -29,9 +35,8 @@ class GradientView: UIView {
     
     func configureView() {
         if let color = color {
-            let gradientLayer = self.layer as! CAGradientLayer
+            let gradientLayer = layer as! CAGradientLayer
             gradientLayer.colors = [color.startColor.cgColor, color.endColor.cgColor]
-            gradientLayer.cornerRadius = 5
         }
     }
     

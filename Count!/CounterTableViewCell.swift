@@ -12,12 +12,14 @@ class CounterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var gradientView: GradientView!
     
     var counter: Counter? {
         didSet {
-            if let currentCounter = counter {
-                titleLabel.text = currentCounter.title
-                countLabel.text = "\(currentCounter.getCounter())"
+            if let counter = counter {
+                titleLabel.text = counter.title
+                countLabel.text = "\(counter.getCounter())"
+                gradientView.color = counter.color
             }
         }
     }
