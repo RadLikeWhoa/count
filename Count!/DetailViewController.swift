@@ -79,5 +79,22 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // MARK: - Motion
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake,
+           let counter = counter {
+            let alert = UIAlertController(title: "Reset Counter?", message: "Do you really want to reset \"\(counter.title)\" back to 0?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { action in
+                counter.reset()
+                self.counterLabel.text = "\(counter.getCounter())"
+            }))
+            
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
 }
 
