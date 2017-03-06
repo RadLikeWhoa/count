@@ -96,5 +96,16 @@ class MasterViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let moving = objects[sourceIndexPath.row]
+        
+        objects.remove(at: sourceIndexPath.row)
+        objects.insert(moving, at: destinationIndexPath.row)
+    }
+    
 }
 
