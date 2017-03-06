@@ -10,6 +10,35 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    let options = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let confirmReset = UIAlertController(title: "Reset Counter?", message: "Do you really want to reset your counter back to 0?", preferredStyle: .alert)
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        options.addAction(UIAlertAction(title: "Reset", style: .default, handler: { action in
+            self.reset()
+        }))
+        
+        options.addAction(UIAlertAction(title: "Edit", style: .default, handler: { action in
+            self.performSegue(withIdentifier: "editItem", sender: nil)
+        }))
+        
+        options.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+        }))
+        
+        options.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        confirmReset.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        confirmReset.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { action in
+            if let counter = self.counter {
+                counter.reset()
+                self.counterLabel.text = "\(counter.getCounter())"
+            }
+        }))
+    }
+    
     var counter: Counter? {
         didSet {
             configureView()
@@ -38,8 +67,8 @@ class DetailViewController: UIViewController {
         configureView()
     }
     
-    @IBAction func editItem(_ sender: AnyObject) {
-        performSegue(withIdentifier: "editItem", sender: nil)
+    @IBAction func showMore(_ sender: UIBarButtonItem) {
+        present(options, animated: true, completion: nil)
     }
     
     @IBAction func increase(_ sender: UIButton) {
@@ -59,6 +88,13 @@ class DetailViewController: UIViewController {
             if let counterLabel = counterLabel {
                 counterLabel.text = "\(counter.getCounter())"
             }
+        }
+    }
+    
+    func reset() {
+        if let counter = counter {
+            confirmReset.title = "Do you really want to reset \"\(counter.title)\" back to 0?"
+            present(confirmReset, animated: true, completion: nil)
         }
     }
     
@@ -82,17 +118,8 @@ class DetailViewController: UIViewController {
     // MARK: - Motion
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake,
-           let counter = counter {
-            let alert = UIAlertController(title: "Reset Counter?", message: "Do you really want to reset \"\(counter.title)\" back to 0?", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { action in
-                counter.reset()
-                self.counterLabel.text = "\(counter.getCounter())"
-            }))
-            
-            present(alert, animated: true, completion: nil)
+        if motion == .motionShake {
+            reset()
         }
     }
     
