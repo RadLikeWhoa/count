@@ -10,8 +10,13 @@ import UIKit
 
 class CounterButton: UIButton {
     
-    let defaultBackground = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
-    let highlightedBackground = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+    @IBInspectable var defaultBackground: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) {
+        didSet {
+            backgroundColor = defaultBackground
+        }
+    }
+    
+    @IBInspectable var highlightedBackground: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

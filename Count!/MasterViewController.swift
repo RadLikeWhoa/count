@@ -50,7 +50,7 @@ class MasterViewController: UITableViewController {
             let source = segue.source as! EditViewController
             
             if (source.isNew) {
-                objects.insert(source.counter!, at: 0)
+                objects.insert(source.counter, at: 0)
                 
                 let indexPath = IndexPath(row: 0, section: 0)
                 tableView.insertRows(at: [indexPath], with: .automatic)

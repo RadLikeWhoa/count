@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,21 +34,51 @@
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6C-eV-rFu" customClass="GradientView" customModule="Count_" customModuleProvider="target">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1L-34-iQS">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-Pc-qDu" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="increase:" destination="JEX-9P-axG" eventType="touchUpInside" id="Hek-fu-f1d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJi-Vr-ms4" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="decrease:" destination="JEX-9P-axG" eventType="touchUpInside" id="hW7-U7-IXm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="k1L-34-iQS" firstAttribute="leading" secondItem="J6C-eV-rFu" secondAttribute="leadingMargin" constant="12" id="6Xw-JY-sUu"/>
+                                    <constraint firstAttribute="bottom" secondItem="BJi-Vr-ms4" secondAttribute="bottom" id="8n8-a1-Wom"/>
+                                    <constraint firstItem="BJi-Vr-ms4" firstAttribute="leading" secondItem="J6C-eV-rFu" secondAttribute="leading" id="IX0-hU-eKO"/>
+                                    <constraint firstItem="k1L-34-iQS" firstAttribute="centerY" secondItem="J6C-eV-rFu" secondAttribute="centerY" id="Mli-cZ-X0Q"/>
+                                    <constraint firstItem="BJi-Vr-ms4" firstAttribute="height" secondItem="J6C-eV-rFu" secondAttribute="height" multiplier="0.5" id="NAl-g9-kuf"/>
+                                    <constraint firstItem="6bk-Pc-qDu" firstAttribute="height" secondItem="J6C-eV-rFu" secondAttribute="height" multiplier="0.5" id="ORh-Eq-tW2"/>
+                                    <constraint firstAttribute="trailing" secondItem="6bk-Pc-qDu" secondAttribute="trailing" id="VSZ-9r-2EP"/>
+                                    <constraint firstAttribute="trailing" secondItem="BJi-Vr-ms4" secondAttribute="trailing" id="iRP-AU-Zy4"/>
+                                    <constraint firstItem="6bk-Pc-qDu" firstAttribute="leading" secondItem="J6C-eV-rFu" secondAttribute="leading" id="rdR-tD-8Lj"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="k1L-34-iQS" secondAttribute="trailing" constant="12" id="vSm-Tz-3UB"/>
+                                    <constraint firstItem="6bk-Pc-qDu" firstAttribute="top" secondItem="J6C-eV-rFu" secondAttribute="top" id="zrv-vS-jN5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
+                            <constraint firstItem="J6C-eV-rFu" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="4yb-wF-7Ir"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="J6C-eV-rFu" secondAttribute="bottom" id="BBw-85-LtR"/>
+                            <constraint firstAttribute="trailing" secondItem="J6C-eV-rFu" secondAttribute="trailing" id="IeQ-Uu-uNF"/>
+                            <constraint firstItem="J6C-eV-rFu" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="TSw-wP-blx"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -59,13 +90,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
-                        <segue destination="hzh-RU-7ck" kind="presentation" identifier="editItem" id="h0h-hl-aEE"/>
+                        <outlet property="counterLabel" destination="k1L-34-iQS" id="tYn-KE-Fx6"/>
+                        <outlet property="gradientView" destination="J6C-eV-rFu" id="dXm-wv-V2p"/>
+                        <segue destination="hzh-RU-7ck" kind="presentation" identifier="editItem" modalTransitionStyle="flipHorizontal" id="h0h-hl-aEE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708.69565217391312" y="128.80434782608697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HOf-A6-0ej">
@@ -88,17 +120,17 @@
             <objects>
                 <tableViewController id="mbV-rd-ejx" customClass="EditViewController" customModule="Count_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WJf-qi-V4l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="RGz-V6-3fd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="L0C-ab-PAJ">
-                                        <rect key="frame" x="0.0" y="99" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L0C-ab-PAJ" id="UYe-yx-EiQ">
-                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzC-Xc-pmj">
@@ -130,10 +162,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="068-aW-6hQ">
-                                        <rect key="frame" x="0.0" y="143" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="068-aW-6hQ" id="czC-d3-hX6">
-                                            <frame key="frameInset" width="414" height="43.666666666666664"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-ew-iSn">
@@ -162,10 +194,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Y6U-nY-rTY">
-                                        <rect key="frame" x="0.0" y="187" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="187" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y6U-nY-rTY" id="ptT-fp-Nxt">
-                                            <frame key="frameInset" width="381" height="43.666666666666664"/>
+                                            <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSj-9v-LNp">
@@ -237,6 +269,7 @@
                         <outlet property="saveButton" destination="8c7-wp-m3F" id="yHJ-di-iBH"/>
                         <outlet property="titleTextField" destination="hOe-bE-wwp" id="Aug-ZT-xwa"/>
                         <segue destination="UMY-Mw-MoH" kind="unwind" identifier="unwindToMaster" unwindAction="unwindWithSegue:" id="1os-M4-q8o"/>
+                        <segue destination="UMY-Mw-MoH" kind="unwind" identifier="unwindToDetail" unwindAction="unwindToDetailWithSegue:" id="TB4-YP-vGE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgA-CE-tPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,16 +282,16 @@
             <objects>
                 <tableViewController id="6JQ-Nl-Kqv" customClass="ColorPickerTableViewController" customModule="Count_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="JA1-dz-9o1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="colorCell" rowHeight="88" id="5gT-8H-xRw" customClass="ColorTableViewCell" customModule="Count_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="119.5" width="414" height="88"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5gT-8H-xRw" id="3yA-Gk-dOA">
-                                    <frame key="frameInset" width="414" height="87.666666666666671"/>
+                                    <frame key="frameInset" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WY7-bv-rhy" customClass="GradientView" customModule="Count_" customModuleProvider="target">
@@ -309,16 +342,16 @@
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Count_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="r7i-6Z-zg0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="88" id="WCw-Qf-5nD" customClass="CounterTableViewCell" customModule="Count_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="119.5" width="414" height="88"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="414" height="87.666666666666671"/>
+                                    <frame key="frameInset" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dl0-Yn-jgN" customClass="GradientView" customModule="Count_" customModuleProvider="target">
@@ -353,6 +386,14 @@
                                             <state key="normal" title="-">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="defaultBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="decrement:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Jcs-2d-k6l"/>
                                             </connections>
@@ -366,6 +407,14 @@
                                             <state key="normal" title="+">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="defaultBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="increment:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Pqq-KD-VNb"/>
                                             </connections>
@@ -413,6 +462,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="C9V-04-Jmy"/>
+        <segue reference="h0h-hl-aEE"/>
     </inferredMetricsTieBreakers>
 </document>

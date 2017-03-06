@@ -32,4 +32,8 @@ class Counter {
         return counter
     }
     
+    public func reset() {
+        counter = 0
+    }
+    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class EditViewController: UITableViewController {
     
-    var counter: Counter? {
+    var counter: Counter = Counter() {
         didSet {
             configureView()
         }
@@ -25,32 +25,24 @@ class EditViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
-        if isNew {
-            counter = Counter()
-        }
-        
         configureView()
     }
     
     func configureView() {
-        if let counter = counter {
-            if !isNew {
-                navigationItem.title = "Edit: \(counter.title)"
-                
-                if let offsetTextField = offsetTextField {
-                    offsetTextField.text = "\(counter.getCounter())"
-                    offsetTextField.isEnabled = false
-                }
-            }
+        if !isNew {
+            navigationItem.title = "Edit: \(counter.title)"
             
-            if let titleTextField = titleTextField {
-                titleTextField.text = counter.title
-                saveButton.isEnabled = !(titleTextField.text?.isEmpty)!
+            if let offsetTextField = offsetTextField {
+                offsetTextField.text = "\(counter.getCounter())"
             }
-            
-            colorize(color: counter.color)
         }
-
+        
+        if let titleTextField = titleTextField {
+            titleTextField.text = counter.title
+            saveButton.isEnabled = !(titleTextField.text?.isEmpty)!
+        }
+        
+        colorize(color: counter.color)
     }
     
     @IBAction func cancelEdit(_ sender: AnyObject) {
@@ -68,14 +60,14 @@ class EditViewController: UITableViewController {
     }
     
     @IBAction func saveCounter(_ sender: AnyObject) {
-        if self.isNew {
-            counter?.title = titleTextField.text!
-            counter?.increment(value: Int(offsetTextField.text!)!)
-        } else {
-            counter?.title = titleTextField.text!
+        if !isNew {
+            counter.reset()
         }
         
-        performSegue(withIdentifier: "unwindToMaster", sender: self)
+        counter.title = titleTextField.text!
+        counter.increment(value: Int(offsetTextField.text!)!)
+        
+        performSegue(withIdentifier: isNew ? "unwindToMaster" : "unwindToDetail", sender: self)
     }
     
     @IBAction func titleTextChanged(_ textField: UITextField) {
@@ -91,10 +83,7 @@ class EditViewController: UITableViewController {
             let controller = segue.source as! ColorPickerTableViewController
             
             if let color = controller.selectedColor {
-                if let counter = counter {
-                    counter.color = color
-                }
-                
+                counter.color = color
                 colorize(color: color)
             }
         }
