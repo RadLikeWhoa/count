@@ -25,16 +25,22 @@ class EditViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         configureView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        titleTextField.becomeFirstResponder()
     }
     
     func configureView() {
         if !isNew {
             navigationItem.title = "Edit: \(counter.title)"
-            
-            if let offsetTextField = offsetTextField {
-                offsetTextField.text = "\(counter.getCounter())"
-            }
+        }
+        
+        if let offsetTextField = offsetTextField {
+            offsetTextField.text = "\(counter.getCounter())"
         }
         
         if let titleTextField = titleTextField {
@@ -46,6 +52,9 @@ class EditViewController: UITableViewController {
     }
     
     @IBAction func cancelEdit(_ sender: AnyObject) {
+        titleTextField.resignFirstResponder()
+        offsetTextField.resignFirstResponder()
+        
         dismiss(animated: true)
     }
     
@@ -66,6 +75,9 @@ class EditViewController: UITableViewController {
         
         counter.title = titleTextField.text!
         counter.increment(value: Int(offsetTextField.text!)!)
+        
+        titleTextField.resignFirstResponder()
+        offsetTextField.resignFirstResponder()
         
         performSegue(withIdentifier: isNew ? "unwindToMaster" : "unwindToDetail", sender: self)
     }

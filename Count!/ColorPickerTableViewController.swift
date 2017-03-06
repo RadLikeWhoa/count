@@ -17,6 +17,7 @@ class ColorPickerTableViewController: UITableViewController {
     // MARK: - Table view events
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        super.tableView(tableView, willSelectRowAt: indexPath)
         selectedColor = availableColors[indexPath.row]
         return indexPath
     }

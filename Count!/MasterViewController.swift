@@ -20,10 +20,6 @@ class MasterViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
     func insertNewObject(_ sender: Any) {
         performSegue(withIdentifier: "addItem", sender: nil)
     }
@@ -80,10 +76,6 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88
-    }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -103,6 +95,12 @@ class MasterViewController: UITableViewController {
         
         objects.remove(at: sourceIndexPath.row)
         objects.insert(moving, at: destinationIndexPath.row)
+    }
+    
+    // MARK: - Table View Styling
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 88
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
