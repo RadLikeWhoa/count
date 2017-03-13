@@ -19,6 +19,11 @@ class MasterViewController: UITableViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     func insertNewObject(_ sender: Any) {
         performSegue(withIdentifier: "addItem", sender: nil)
@@ -48,8 +53,11 @@ class MasterViewController: UITableViewController {
                 
                 let indexPath = IndexPath(row: 0, section: 0)
                 tableView.insertRows(at: [indexPath], with: .automatic)
-            } else {
-                // update
+            }
+        } else if segue.identifier == "deleteItem" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                objects.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         }
     }

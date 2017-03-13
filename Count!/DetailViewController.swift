@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
         }))
         
         options.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.performSegue(withIdentifier: "deleteItem", sender: self)
         }))
         
         options.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

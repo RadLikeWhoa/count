@@ -93,9 +93,11 @@
                         <outlet property="counterLabel" destination="k1L-34-iQS" id="tYn-KE-Fx6"/>
                         <outlet property="gradientView" destination="J6C-eV-rFu" id="dXm-wv-V2p"/>
                         <segue destination="hzh-RU-7ck" kind="presentation" identifier="editItem" modalTransitionStyle="flipHorizontal" id="h0h-hl-aEE"/>
+                        <segue destination="bTN-B7-lVQ" kind="unwind" identifier="deleteItem" unwindAction="unwindWithSegue:" id="31V-YY-qiV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
+                <exit id="bTN-B7-lVQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="128.80434782608697"/>
         </scene>
