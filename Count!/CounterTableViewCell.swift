@@ -50,22 +50,9 @@ class CounterTableViewCell: UITableViewCell {
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
-        if editing {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.incrementer.alpha = 0
-                self.decrementer.alpha = 0
-            }) { completion in
-                self.incrementer.isHidden = true
-                self.decrementer.isHidden = true
-            }
-        } else {
-            self.incrementer.isHidden = false
-            self.decrementer.isHidden = false
-            
-            UIView.animate(withDuration: 0.2) {
-                self.incrementer.alpha = 1
-                self.decrementer.alpha = 1
-            }
+        UIView.animate(withDuration: 0.2) {
+            self.incrementer.alpha = editing ? 0 : 1
+            self.decrementer.alpha = editing ? 0 : 1
         }
     }
     
