@@ -13,6 +13,9 @@ class MasterViewController: UITableViewController {
     // MARK: - Properties 
     
     private var counters = [Counter]()
+    fileprivate var filteredCounters = [Counter]()
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - View
 
@@ -20,6 +23,11 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
     
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,9 +40,16 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = counters[indexPath.row]
+                let counter: Counter
+                
+                if isSearching() {
+                    counter = filteredCounters[indexPath.row]
+                } else {
+                    counter = counters[indexPath.row]
+                }
+                
                 let controller = segue.destination as! DetailViewController
-                controller.counter = object
+                controller.counter = counter
             }
         } else if segue.identifier == "addItem" {
             let controller = (segue.destination as! UINavigationController).topViewController as! EditViewController
@@ -66,9 +81,23 @@ class MasterViewController: UITableViewController {
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching() {
+            return filteredCounters.count
+        }
+        
+        return counters.count
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CounterTableViewCell
-        let counter = counters[indexPath.row]
+        let counter: Counter
+        
+        if isSearching() {
+            counter = filteredCounters[indexPath.row]
+        } else {
+            counter = counters[indexPath.row]
+        }
         
         cell.counter = counter
         
@@ -84,10 +113,6 @@ class MasterViewController: UITableViewController {
     }
     
     // MARK: - Table View Events
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return counters.count
-    }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -117,6 +142,20 @@ class MasterViewController: UITableViewController {
         return CGFloat.leastNormalMagnitude
     }
     
+    // MARK: - Search
+    
+    func filterContent(for searchText: String) {
+        filteredCounters = counters.filter { counter in
+            return counter.title.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
+    }
+    
+    private func isSearching() -> Bool {
+        return searchController.isActive && searchController.searchBar.text != ""
+    }
+    
     // MARK: - Events
     
     @IBAction func addItem(_ sender: UIBarButtonItem) {
@@ -126,3 +165,10 @@ class MasterViewController: UITableViewController {
     
 }
 
+// MARK: - UISearchController
+
+extension MasterViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContent(for: searchController.searchBar.text!)
+    }
+}
