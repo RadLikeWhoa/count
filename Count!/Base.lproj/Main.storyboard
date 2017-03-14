@@ -355,6 +355,9 @@
                                     <frame key="frameInset" width="375" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-kM-HaC" customClass="GradientView" customModule="Count_" customModuleProvider="target">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="asN-MQ-4YS">
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-9W-0dQ" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
@@ -423,16 +426,21 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="lNo-kM-HaC" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="-44" id="COP-5F-yVT"/>
                                         <constraint firstItem="asN-MQ-4YS" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" id="DL7-CK-2Da"/>
+                                        <constraint firstAttribute="trailing" secondItem="lNo-kM-HaC" secondAttribute="trailing" constant="-44" id="MVq-Be-Puc"/>
                                         <constraint firstAttribute="bottom" secondItem="asN-MQ-4YS" secondAttribute="bottom" id="Qk8-r3-8YM"/>
+                                        <constraint firstItem="lNo-kM-HaC" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="b8d-gn-ZG5"/>
                                         <constraint firstAttribute="trailing" secondItem="asN-MQ-4YS" secondAttribute="trailing" id="iSa-Yd-nTd"/>
                                         <constraint firstItem="asN-MQ-4YS" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="nvX-q3-IFt"/>
+                                        <constraint firstAttribute="bottom" secondItem="lNo-kM-HaC" secondAttribute="bottom" id="r7e-Un-IUU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="countLabel" destination="2au-jV-6iy" id="hJL-yh-589"/>
                                     <outlet property="decrementer" destination="UVa-9W-0dQ" id="akl-Al-bX8"/>
+                                    <outlet property="gradientView" destination="lNo-kM-HaC" id="DaN-da-zmZ"/>
                                     <outlet property="incrementer" destination="nXu-Uk-eTn" id="29f-nu-Xyp"/>
                                     <outlet property="titleLabel" destination="W9h-T1-qYR" id="x8u-WD-XVN"/>
                                     <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="Hat-8B-JqO"/>
