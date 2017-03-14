@@ -430,9 +430,7 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="lNo-kM-HaC" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="-44" id="COP-5F-yVT"/>
                                         <constraint firstItem="asN-MQ-4YS" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" id="DL7-CK-2Da"/>
-                                        <constraint firstAttribute="trailing" secondItem="lNo-kM-HaC" secondAttribute="trailing" constant="-44" id="MVq-Be-Puc"/>
                                         <constraint firstAttribute="bottom" secondItem="asN-MQ-4YS" secondAttribute="bottom" id="Qk8-r3-8YM"/>
                                         <constraint firstItem="lNo-kM-HaC" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="b8d-gn-ZG5"/>
                                         <constraint firstAttribute="trailing" secondItem="asN-MQ-4YS" secondAttribute="trailing" id="iSa-Yd-nTd"/>
@@ -441,6 +439,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lNo-kM-HaC" secondAttribute="trailing" id="EeT-Bc-DWT"/>
+                                    <constraint firstItem="lNo-kM-HaC" firstAttribute="leading" secondItem="WCw-Qf-5nD" secondAttribute="leading" id="Oiy-L0-2g1"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="countLabel" destination="2au-jV-6iy" id="hJL-yh-589"/>
                                     <outlet property="decrementer" destination="UVa-9W-0dQ" id="akl-Al-bX8"/>
