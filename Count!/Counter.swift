@@ -11,13 +11,13 @@ class Counter {
     // MARK: - Properties
     
     var title: String
-    var color: Color
+    var gradient: Gradient
     
     private var count: Int = 0
     
-    init(title: String = "", color: Color = Color.availableColors[0]) {
+    init(title: String = "", gradient: Gradient = Gradient.availableGradients[0]) {
         self.title = title
-        self.color = color
+        self.gradient = gradient
     }
     
     // MARK: - Actions

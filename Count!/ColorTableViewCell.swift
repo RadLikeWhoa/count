@@ -12,7 +12,7 @@ class ColorTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    var color: Color? {
+    var gradient: Gradient? {
         didSet {
             configureView()
         }
@@ -24,9 +24,9 @@ class ColorTableViewCell: UITableViewCell {
     // MARK: - View
     
     private func configureView() {
-        if let color = color {
-            titleLabel.text = color.label
-            colorPreview.color = color
+        if let gradient = gradient {
+            titleLabel.text = gradient.label
+            colorPreview.gradient = gradient
         }
     }
 

@@ -86,15 +86,15 @@ class DetailViewController: UIViewController {
     }
     
     private func configureView() {
-        if let detail = counter {
-            navigationItem.title = detail.title
+        if let counter = counter {
+            navigationItem.title = counter.title
             
             if let gradientView = gradientView {
-                gradientView.color = detail.color
+                gradientView.gradient = counter.gradient
             }
             
             if let counterLabel = counterLabel {
-                counterLabel.text = "\(detail.getCount())"
+                counterLabel.text = "\(counter.getCount())"
             }
         }
     }

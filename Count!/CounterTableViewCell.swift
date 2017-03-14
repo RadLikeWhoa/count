@@ -30,7 +30,7 @@ class CounterTableViewCell: UITableViewCell {
         if let counter = counter {
             titleLabel.text = counter.title
             countLabel.text = "\(counter.getCount())"
-            gradientView.color = counter.color
+            gradientView.gradient = counter.gradient
         }
     }
     

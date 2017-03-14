@@ -12,7 +12,7 @@ class GradientView: UIView {
     
     // MARK: - Properties
     
-    var color: Color? {
+    var gradient: Gradient? {
         didSet {
             configureView()
         }
@@ -38,9 +38,9 @@ class GradientView: UIView {
     // MARK: - View
     
     private func configureView() {
-        if let color = color {
+        if let gradient = gradient {
             let gradientLayer = layer as! CAGradientLayer
-            gradientLayer.colors = [color.startColor.cgColor, color.endColor.cgColor]
+            gradientLayer.colors = [gradient.from.cgColor, gradient.to.cgColor]
         }
     }
     

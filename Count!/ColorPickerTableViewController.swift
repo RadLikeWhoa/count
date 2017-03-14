@@ -12,9 +12,9 @@ class ColorPickerTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var selectedColor: Color?
+    var selectedGradient: Gradient?
     
-    private let availableColors: [Color] = Color.availableColors
+    private let availableGradients = Gradient.availableGradients
     
     // MARK: - Table View Data Source
     
@@ -23,13 +23,13 @@ class ColorPickerTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableColors.count
+        return availableGradients.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as! ColorTableViewCell
         
-        cell.color = availableColors[indexPath.row]
+        cell.gradient = availableGradients[indexPath.row]
         
         return cell
     }
@@ -37,7 +37,7 @@ class ColorPickerTableViewController: UITableViewController {
     // MARK: - Table View Events
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        selectedColor = availableColors[indexPath.row]
+        selectedGradient = availableGradients[indexPath.row]
         return indexPath
     }
     

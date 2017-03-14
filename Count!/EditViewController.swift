@@ -52,16 +52,16 @@ class EditViewController: UITableViewController {
             saveButton.isEnabled = !(titleTextField.text?.isEmpty)!
         }
         
-        colorize(color: counter.color)
+        colorize(with: counter.gradient)
     }
     
-    private func colorize(color: Color) {
+    private func colorize(with: Gradient) {
         if let colorName = colorName {
-            colorName.text = color.label
+            colorName.text = with.label
         }
         
         if let colorPreview = colorPreview {
-            colorPreview.color = color
+            colorPreview.gradient = with
         }
     }
     
@@ -100,9 +100,9 @@ class EditViewController: UITableViewController {
         if segue.identifier == "unwindToEdit" {
             let controller = segue.source as! ColorPickerTableViewController
             
-            if let color = controller.selectedColor {
-                counter.color = color
-                colorize(color: color)
+            if let gradient = controller.selectedGradient {
+                counter.gradient = gradient
+                colorize(with: gradient)
             }
         }
     }
