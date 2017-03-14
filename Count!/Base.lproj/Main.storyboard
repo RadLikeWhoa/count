@@ -457,7 +457,13 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Count!" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Count!" id="Zdf-7t-Un8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2uv-Pa-GyS">
+                            <connections>
+                                <action selector="addItem:" destination="7bK-jq-Zjz" id="qp0-as-kbE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="hzh-RU-7ck" kind="presentation" identifier="addItem" id="C9V-04-Jmy"/>
                     </connections>
@@ -471,6 +477,6 @@
         <image name="MoreIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h0h-hl-aEE"/>
+        <segue reference="C9V-04-Jmy"/>
     </inferredMetricsTieBreakers>
 </document>

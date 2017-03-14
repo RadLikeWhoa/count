@@ -20,21 +20,11 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
     
         navigationItem.leftBarButtonItem = editButtonItem
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        navigationItem.rightBarButtonItem = addButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-    }
-    
-    // MARK: - Data
-
-    func insertNewObject(_ sender: Any) {
-        setEditing(false, animated: true)
-        performSegue(withIdentifier: "addItem", sender: nil)
     }
 
     // MARK: - Segues
@@ -125,6 +115,13 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return CGFloat.leastNormalMagnitude
+    }
+    
+    // MARK: - Events
+    
+    @IBAction func addItem(_ sender: UIBarButtonItem) {
+        setEditing(false, animated: true)
+        performSegue(withIdentifier: "addItem", sender: nil)
     }
     
 }
