@@ -6,6 +6,8 @@
 //
 //
 
+import Foundation
+
 class Counter {
     
     // MARK: - Properties
@@ -15,7 +17,7 @@ class Counter {
     
     private var count: Int = 0
     
-    init(title: String = "", gradient: Gradient = Gradient.availableGradients[0]) {
+    init(title: String = "", gradient: Gradient = Gradient.getRandomGradient()) {
         self.title = title
         self.gradient = gradient
     }

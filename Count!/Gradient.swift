@@ -45,4 +45,11 @@ struct Gradient {
         self.to = to
     }
     
+    // MARK: - Actions
+    
+    static func getRandomGradient() -> Gradient {
+        let random = Int(arc4random_uniform(UInt32(Gradient.availableGradients.count)))
+        return Gradient.availableGradients[random]
+    }
+    
 }
