@@ -357,7 +357,7 @@
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="asN-MQ-4YS">
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-9W-0dQ" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-9W-0dQ" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="UVa-9W-0dQ" secondAttribute="height" multiplier="1:1" id="kAJ-80-yPi"/>
@@ -392,7 +392,7 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-Uk-eTn" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-Uk-eTn" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nXu-Uk-eTn" secondAttribute="height" multiplier="1:1" id="G15-ia-3A5"/>
@@ -415,8 +415,12 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="UVa-9W-0dQ" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" id="0Fc-Ek-bsT"/>
+                                                <constraint firstAttribute="bottom" secondItem="nXu-Uk-eTn" secondAttribute="bottom" id="Qkh-8I-UsB"/>
                                                 <constraint firstItem="Iqn-Lp-XM7" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" constant="15" id="X4V-2V-J8I"/>
                                                 <constraint firstAttribute="bottom" secondItem="Iqn-Lp-XM7" secondAttribute="bottom" constant="15" id="lB2-yG-r8B"/>
+                                                <constraint firstItem="nXu-Uk-eTn" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" id="wza-hs-dgT"/>
+                                                <constraint firstAttribute="bottom" secondItem="UVa-9W-0dQ" secondAttribute="bottom" id="yL1-BC-wHW"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -430,6 +434,8 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="countLabel" destination="2au-jV-6iy" id="hJL-yh-589"/>
+                                    <outlet property="decrementer" destination="UVa-9W-0dQ" id="akl-Al-bX8"/>
+                                    <outlet property="incrementer" destination="nXu-Uk-eTn" id="29f-nu-Xyp"/>
                                     <outlet property="titleLabel" destination="W9h-T1-qYR" id="x8u-WD-XVN"/>
                                     <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="Hat-8B-JqO"/>
                                 </connections>

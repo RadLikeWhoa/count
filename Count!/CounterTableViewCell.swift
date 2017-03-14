@@ -12,6 +12,8 @@ class CounterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var incrementer: CounterButton!
+    @IBOutlet weak var decrementer: CounterButton!
     
     override open class var layerClass: AnyClass {
         get{
@@ -42,6 +44,22 @@ class CounterTableViewCell: UITableViewCell {
         if let counter = counter {
             counter.increment()
             countLabel.text = "\(counter.getCounter())"
+        }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        if editing {
+            UIView.animate(withDuration: 0.2) {
+                self.incrementer.alpha = 0
+                self.decrementer.alpha = 0
+            }
+        } else {
+            UIView.animate(withDuration: 0.2) {
+                self.incrementer.alpha = 1
+                self.decrementer.alpha = 1
+            }
         }
     }
     
