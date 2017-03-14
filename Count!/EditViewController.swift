@@ -80,7 +80,12 @@ class EditViewController: UITableViewController {
         }
         
         counter.title = titleTextField.text!
-        counter.increment(value: Int(offsetTextField.text!)!)
+        
+        if let offset = Int(offsetTextField.text!) {
+            counter.increment(value: offset)
+        } else {
+            counter.reset()
+        }
         
         titleTextField.resignFirstResponder()
         offsetTextField.resignFirstResponder()
@@ -112,6 +117,12 @@ class EditViewController: UITableViewController {
             titleTextField.resignFirstResponder()
             offsetTextField.resignFirstResponder()
         }
+    }
+    
+    // MARK: - Table View Styling
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 
 }

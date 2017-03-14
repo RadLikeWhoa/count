@@ -16,6 +16,13 @@ class ColorPickerTableViewController: UITableViewController {
     
     private let availableGradients = Gradient.availableGradients
     
+    // MARK: - View
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
     // MARK: - Table View Data Source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
