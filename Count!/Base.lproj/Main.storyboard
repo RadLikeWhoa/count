@@ -378,7 +378,7 @@
                                                         <action selector="decrement:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Jcs-2d-k6l"/>
                                                     </connections>
                                                 </button>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Iqn-Lp-XM7">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Iqn-Lp-XM7">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9h-T1-qYR">
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -415,8 +415,8 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Iqn-Lp-XM7" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" constant="11" id="X4V-2V-J8I"/>
-                                                <constraint firstAttribute="bottom" secondItem="Iqn-Lp-XM7" secondAttribute="bottom" constant="11" id="lB2-yG-r8B"/>
+                                                <constraint firstItem="Iqn-Lp-XM7" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" constant="15" id="X4V-2V-J8I"/>
+                                                <constraint firstAttribute="bottom" secondItem="Iqn-Lp-XM7" secondAttribute="bottom" constant="15" id="lB2-yG-r8B"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -455,6 +455,6 @@
         <image name="MoreIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h0h-hl-aEE"/>
+        <segue reference="C9V-04-Jmy"/>
     </inferredMetricsTieBreakers>
 </document>
