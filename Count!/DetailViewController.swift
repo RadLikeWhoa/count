@@ -46,6 +46,9 @@ class DetailViewController: UIViewController {
         }
     }
     
+    var timer: Timer?
+    var interval: Double = 0.5
+    
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var counterLabel: UILabel!
     
@@ -72,31 +75,53 @@ class DetailViewController: UIViewController {
         present(options, animated: true, completion: nil)
     }
     
-    @IBAction func increase(_ sender: UIButton) {
-        if let counter = counter {
-            counter.increment()
-            
-            if let counterLabel = counterLabel {
-                counterLabel.text = "\(counter.getCounter())"
-            }
-        }
-    }
-    
-    @IBAction func decrease(_ sender: UIButton) {
-        if let counter = counter {
-            counter.decrement()
-            
-            if let counterLabel = counterLabel {
-                counterLabel.text = "\(counter.getCounter())"
-            }
-        }
-    }
-    
     func reset() {
         if let counter = counter {
             confirmReset.title = "Do you really want to reset \"\(counter.title)\" back to 0?"
             present(confirmReset, animated: true, completion: nil)
         }
+    }
+    
+    enum ButtonAction {
+        case increment
+        case decrement
+    }
+    
+    func scheduleTimer(action: ButtonAction) {
+        if interval > 0.2 {
+            interval -= 0.1
+        }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false, block: {_ in
+            self.modifyCount(action: action)
+            self.scheduleTimer(action: action)
+        })
+    }
+    
+    func modifyCount(action: ButtonAction) {
+        if let counter = counter {
+            if action == .increment {
+                counter.increment()
+            } else {
+                counter.decrement()
+            }
+            
+            if let counterLabel = counterLabel {
+                counterLabel.text = "\(counter.getCounter())"
+            }
+        }
+    }
+    
+    @IBAction func touchDown(_ sender: UIButton) {
+        let action: ButtonAction = sender.tag == 1 ? .increment : .decrement
+        
+        modifyCount(action: action)
+        scheduleTimer(action: action)
+    }
+    
+    @IBAction func touchUp(_ sender: UIButton) {
+        timer?.invalidate()
+        interval = 0.5
     }
     
     // MARK: - Segues

@@ -45,16 +45,18 @@
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I6D-S1-XJV">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-Pc-qDu" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-Pc-qDu" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="increase:" destination="JEX-9P-axG" eventType="touchUpInside" id="Hek-fu-f1d"/>
+                                                    <action selector="touchDown:" destination="JEX-9P-axG" eventType="touchDown" id="6c8-Lg-eRe"/>
+                                                    <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchUpInside" id="zTp-BV-cuq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJi-Vr-ms4" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJi-Vr-ms4" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="decrease:" destination="JEX-9P-axG" eventType="touchUpInside" id="hW7-U7-IXm"/>
+                                                    <action selector="touchDown:" destination="JEX-9P-axG" eventType="touchDown" id="f4v-9T-h5A"/>
+                                                    <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchUpInside" id="INl-Fg-WQJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -467,6 +469,6 @@
         <image name="MoreIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C9V-04-Jmy"/>
+        <segue reference="h0h-hl-aEE"/>
     </inferredMetricsTieBreakers>
 </document>
