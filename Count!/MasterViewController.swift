@@ -26,6 +26,7 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
+        setEditing(false, animated: true)
         performSegue(withIdentifier: "addItem", sender: nil)
     }
 

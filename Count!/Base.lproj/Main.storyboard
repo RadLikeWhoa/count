@@ -414,14 +414,6 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="UVa-9W-0dQ" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" id="0Fc-Ek-bsT"/>
-                                                <constraint firstAttribute="bottom" secondItem="nXu-Uk-eTn" secondAttribute="bottom" id="Qkh-8I-UsB"/>
-                                                <constraint firstItem="Iqn-Lp-XM7" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" constant="15" id="X4V-2V-J8I"/>
-                                                <constraint firstAttribute="bottom" secondItem="Iqn-Lp-XM7" secondAttribute="bottom" constant="15" id="lB2-yG-r8B"/>
-                                                <constraint firstItem="nXu-Uk-eTn" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" id="wza-hs-dgT"/>
-                                                <constraint firstAttribute="bottom" secondItem="UVa-9W-0dQ" secondAttribute="bottom" id="yL1-BC-wHW"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
