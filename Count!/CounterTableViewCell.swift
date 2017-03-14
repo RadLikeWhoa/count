@@ -12,14 +12,21 @@ class CounterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var gradientView: GradientView!
+    
+    override open class var layerClass: AnyClass {
+        get{
+            return CAGradientLayer.classForCoder()
+        }
+    }
     
     var counter: Counter? {
         didSet {
             if let counter = counter {
                 titleLabel.text = counter.title
                 countLabel.text = "\(counter.getCounter())"
-                gradientView.color = counter.color
+                
+                let gradientLayer = layer as! CAGradientLayer
+                gradientLayer.colors = [counter.color.startColor.cgColor, counter.color.endColor.cgColor]
             }
         }
     }
