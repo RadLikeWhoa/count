@@ -122,8 +122,8 @@ class DetailViewController: UIViewController {
     // MARK: - Counter
     
     private func scheduleTimer(action: ButtonAction) {
-        if interval > 0.2 {
-            interval -= 0.1
+        if interval > 0.1 {
+            interval -= 0.05
         }
         
         timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false, block: {_ in
