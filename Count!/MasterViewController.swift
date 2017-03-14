@@ -23,6 +23,7 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
     
         navigationItem.leftBarButtonItem = editButtonItem
+        navigationItem.leftBarButtonItem?.tintColor = .white
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false

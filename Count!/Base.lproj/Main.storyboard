@@ -12,9 +12,13 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.18431372549019609" green="0.50196078431372548" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
@@ -87,6 +91,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
                         <barButtonItem key="rightBarButtonItem" image="MoreIcon" id="51L-Fb-PLn">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="showMore:" destination="JEX-9P-axG" id="p9M-wf-oBc"/>
                             </connections>
@@ -108,9 +113,13 @@
         <scene sceneID="HOf-A6-0ej">
             <objects>
                 <navigationController id="hzh-RU-7ck" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZL3-RG-Bq1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZL3-RG-Bq1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.18431372549019609" green="0.50196078431372548" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="mbV-rd-ejx" kind="relationship" relationship="rootViewController" id="ocx-EN-6aZ"/>
@@ -257,11 +266,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Counter" id="hPc-Ee-ofV">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tDV-PN-Zjk">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelEdit:" destination="mbV-rd-ejx" id="fKS-ZV-NhQ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="8c7-wp-m3F">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveCounter:" destination="mbV-rd-ejx" id="ZYO-Qm-1RM"/>
                             </connections>
@@ -461,6 +472,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Count!" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2uv-Pa-GyS">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addItem:" destination="7bK-jq-Zjz" id="qp0-as-kbE"/>
                             </connections>
@@ -479,6 +491,6 @@
         <image name="MoreIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C9V-04-Jmy"/>
+        <segue reference="h0h-hl-aEE"/>
     </inferredMetricsTieBreakers>
 </document>
