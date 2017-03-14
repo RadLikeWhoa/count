@@ -51,11 +51,17 @@ class CounterTableViewCell: UITableViewCell {
         super.setEditing(editing, animated: animated)
         
         if editing {
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.incrementer.alpha = 0
                 self.decrementer.alpha = 0
+            }) { completion in
+                self.incrementer.isHidden = true
+                self.decrementer.isHidden = true
             }
         } else {
+            self.incrementer.isHidden = false
+            self.decrementer.isHidden = false
+            
             UIView.animate(withDuration: 0.2) {
                 self.incrementer.alpha = 1
                 self.decrementer.alpha = 1
