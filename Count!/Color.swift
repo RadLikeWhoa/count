@@ -10,6 +10,8 @@ import UIKit
 
 struct Color {
     
+    // MARK: - Properties
+    
     static let availableColors = [
         Color(label: "Sha La La", startColor: UIColor(hex: 0xE29587), endColor: UIColor(hex: 0xD66D75)),
         Color(label: "Solid Vault", startColor: UIColor(hex: 0x3a7bd5), endColor: UIColor(hex: 0x3a6073)),

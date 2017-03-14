@@ -9,7 +9,12 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-    var objects = [Counter]()
+    
+    // MARK: - Properties 
+    
+    private var counters = [Counter]()
+    
+    // MARK: - View
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,8 @@ class MasterViewController: UITableViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
+    // MARK: - Data
 
     func insertNewObject(_ sender: Any) {
         setEditing(false, animated: true)
@@ -35,7 +42,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row]
+                let object = counters[indexPath.row]
                 let controller = segue.destination as! DetailViewController
                 controller.counter = object
             }
@@ -50,60 +57,60 @@ class MasterViewController: UITableViewController {
             let source = segue.source as! EditViewController
             
             if (source.isNew) {
-                objects.insert(source.counter, at: 0)
+                counters.insert(source.counter, at: 0)
                 
                 let indexPath = IndexPath(row: 0, section: 0)
                 tableView.insertRows(at: [indexPath], with: .automatic)
             }
         } else if segue.identifier == "deleteItem" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                objects.remove(at: indexPath.row)
+                counters.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         }
     }
 
-    // MARK: - Table View
+    // MARK: - Table View Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
-    }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CounterTableViewCell
-        let counter = objects[indexPath.row]
+        let counter = counters[indexPath.row]
         
         cell.counter = counter
         
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
-    }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    // MARK: - Table View Events
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return counters.count
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            counters.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let moving = objects[sourceIndexPath.row]
+        let moving = counters[sourceIndexPath.row]
         
-        objects.remove(at: sourceIndexPath.row)
-        objects.insert(moving, at: destinationIndexPath.row)
+        counters.remove(at: sourceIndexPath.row)
+        counters.insert(moving, at: destinationIndexPath.row)
     }
     
     // MARK: - Table View Styling

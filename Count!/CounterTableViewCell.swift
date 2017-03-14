@@ -9,6 +9,14 @@
 import UIKit
 
 class CounterTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
+    
+    var counter: Counter? {
+        didSet {
+            configureView()
+        }
+    }
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
@@ -16,29 +24,33 @@ class CounterTableViewCell: UITableViewCell {
     @IBOutlet weak var decrementer: CounterButton!
     @IBOutlet weak var gradientView: GradientView!
     
-    var counter: Counter? {
-        didSet {
-            if let counter = counter {
-                titleLabel.text = counter.title
-                countLabel.text = "\(counter.getCounter())"
-                gradientView.color = counter.color
-            }
+    // MARK: - View
+    
+    private func configureView() {
+        if let counter = counter {
+            titleLabel.text = counter.title
+            countLabel.text = "\(counter.getCount())"
+            gradientView.color = counter.color
         }
     }
+    
+    // MARK: - Actions
     
     @IBAction func decrement(_ sender: UIButton) {
         if let counter = counter {
             counter.decrement()
-            countLabel.text = "\(counter.getCounter())"
+            countLabel.text = "\(counter.getCount())"
         }
     }
     
     @IBAction func increment(_ sender: UIButton) {
         if let counter = counter {
             counter.increment()
-            countLabel.text = "\(counter.getCounter())"
+            countLabel.text = "\(counter.getCount())"
         }
     }
+    
+    // MARK: - Events
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)

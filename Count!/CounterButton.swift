@@ -10,6 +10,8 @@ import UIKit
 
 class CounterButton: UIButton {
     
+    // MARK: - Properties
+    
     @IBInspectable var defaultBackground: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) {
         didSet {
             backgroundColor = defaultBackground
@@ -22,6 +24,8 @@ class CounterButton: UIButton {
         super.init(coder: aDecoder)
         backgroundColor = defaultBackground
     }
+    
+    // MARK: - Events
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

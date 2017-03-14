@@ -10,6 +10,8 @@ import UIKit
 
 class ColorTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
+    
     var color: Color? {
         didSet {
             configureView()
@@ -19,7 +21,9 @@ class ColorTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var colorPreview: GradientView!
     
-    func configureView() {
+    // MARK: - View
+    
+    private func configureView() {
         if let color = color {
             titleLabel.text = color.label
             colorPreview.color = color

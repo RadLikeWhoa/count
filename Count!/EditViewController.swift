@@ -10,6 +10,8 @@ import UIKit
 
 class EditViewController: UITableViewController {
     
+    // MARK: - Properties
+    
     var counter: Counter = Counter() {
         didSet {
             configureView()
@@ -24,6 +26,8 @@ class EditViewController: UITableViewController {
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    // MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -34,13 +38,13 @@ class EditViewController: UITableViewController {
         titleTextField.becomeFirstResponder()
     }
     
-    func configureView() {
+    private func configureView() {
         if !isNew {
             navigationItem.title = "Edit: \(counter.title)"
         }
         
         if let offsetTextField = offsetTextField {
-            offsetTextField.text = "\(counter.getCounter())"
+            offsetTextField.text = "\(counter.getCount())"
         }
         
         if let titleTextField = titleTextField {
@@ -51,13 +55,6 @@ class EditViewController: UITableViewController {
         colorize(color: counter.color)
     }
     
-    @IBAction func cancelEdit(_ sender: AnyObject) {
-        titleTextField.resignFirstResponder()
-        offsetTextField.resignFirstResponder()
-        
-        dismiss(animated: true)
-    }
-    
     private func colorize(color: Color) {
         if let colorName = colorName {
             colorName.text = color.label
@@ -66,6 +63,15 @@ class EditViewController: UITableViewController {
         if let colorPreview = colorPreview {
             colorPreview.color = color
         }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func cancelEdit(_ sender: AnyObject) {
+        titleTextField.resignFirstResponder()
+        offsetTextField.resignFirstResponder()
+        
+        dismiss(animated: true)
     }
     
     @IBAction func saveCounter(_ sender: AnyObject) {
