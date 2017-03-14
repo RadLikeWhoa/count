@@ -85,6 +85,14 @@ class DetailViewController: UIViewController {
         configureView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !UserDefaults.standard.bool(forKey: "helpViewed") {
+            showOverlay()
+        }
+    }
+    
     private func configureView() {
         if let counter = counter {
             navigationItem.title = counter.title
@@ -96,6 +104,34 @@ class DetailViewController: UIViewController {
             if let counterLabel = counterLabel {
                 counterLabel.text = "\(counter.getCount())"
             }
+        }
+    }
+    
+    private func showOverlay() {
+        if let window = UIApplication.shared.windows.last {
+            let view = UIImageView(frame: window.bounds)
+            view.image = UIImage(named: window.bounds.height > 666 ? "intro" : "intro-alt")
+            
+            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailViewController.closeOverlay)))
+            view.isUserInteractionEnabled = true
+            view.alpha = 0
+            
+            window.addSubview(view)
+            
+            UIView.animate(withDuration: 0.2) {
+                view.alpha = 1
+            }
+        }
+    }
+    
+    @objc private func closeOverlay(sender: UITapGestureRecognizer) {
+        let view = sender.view as! UIImageView
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            view.alpha = 0
+        }) { complete in
+            view.removeFromSuperview()
+            UserDefaults.standard.set(true, forKey: "helpViewed")
         }
     }
     
