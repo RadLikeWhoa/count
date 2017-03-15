@@ -143,14 +143,14 @@ class DetailViewController: UIViewController {
     
     private func showResetConfirmation() {
         if let counter = counter {
-            confirmReset.title = "Do you really want to reset \"\(counter.title)\" back to 0?"
+            confirmReset.message = "Do you really want to reset \"\(counter.title)\" back to 0?"
             present(confirmReset, animated: true, completion: nil)
         }
     }
     
     private func showDeleteConfirmation() {
         if let counter = counter {
-            confirmDelete.title = "Do you really want to delete \"\(counter.title)\"?"
+            confirmDelete.message = "Do you really want to delete \"\(counter.title)\"?"
             present(confirmDelete, animated: true, completion: nil)
         }
     }
