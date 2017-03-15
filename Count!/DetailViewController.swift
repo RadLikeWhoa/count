@@ -82,9 +82,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureView()
-        navigationController?.navigationBar.tintColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {

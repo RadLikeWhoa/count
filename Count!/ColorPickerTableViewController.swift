@@ -20,7 +20,6 @@ class ColorPickerTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.tintColor = .white
     }
     
     // MARK: - Table View Data Source
