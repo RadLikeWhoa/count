@@ -22,7 +22,9 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        navigationItem.leftBarButtonItem = editButtonItem
+        if counters.count > 0 {
+            navigationItem.leftBarButtonItem = editButtonItem
+        }
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -66,11 +68,15 @@ class MasterViewController: UITableViewController {
                 
                 let indexPath = IndexPath(row: 0, section: 0)
                 tableView.insertRows(at: [indexPath], with: .automatic)
+                
+                toggleEditItem()
             }
         } else if segue.identifier == "deleteItem" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 counters.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                toggleEditItem()
             }
         }
     }
@@ -118,6 +124,7 @@ class MasterViewController: UITableViewController {
         if editingStyle == .delete {
             counters.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            toggleEditItem()
         }
     }
     
@@ -161,6 +168,17 @@ class MasterViewController: UITableViewController {
     @IBAction func addItem(_ sender: UIBarButtonItem) {
         setEditing(false, animated: true)
         performSegue(withIdentifier: "addItem", sender: nil)
+    }
+    
+    // MARK: - Actions
+    
+    private func toggleEditItem() {
+        if counters.count == 0 && navigationItem.leftBarButtonItem != nil {
+            navigationItem.leftBarButtonItem = nil
+            setEditing(false, animated: false)
+        } else if navigationItem.leftBarButtonItem == nil {
+            navigationItem.leftBarButtonItem = editButtonItem
+        }
     }
     
 }
