@@ -372,84 +372,80 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-kM-HaC" customClass="GradientView" customModule="Count_" customModuleProvider="target">
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="asN-MQ-4YS">
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-9W-0dQ" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="UVa-9W-0dQ" secondAttribute="height" multiplier="1:1" id="kAJ-80-yPi"/>
-                                                    </constraints>
-                                                    <state key="normal" image="Minus">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="defaultBackground">
-                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackground">
-                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="decrement:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Jcs-2d-k6l"/>
-                                                    </connections>
-                                                </button>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Iqn-Lp-XM7">
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9h-T1-qYR">
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2au-jV-6iy">
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-Uk-eTn" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="nXu-Uk-eTn" secondAttribute="height" multiplier="1:1" id="G15-ia-3A5"/>
-                                                    </constraints>
-                                                    <state key="normal" image="Plus">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="defaultBackground">
-                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackground">
-                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="increment:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Pqq-KD-VNb"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-9W-0dQ" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="UVa-9W-0dQ" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" id="UsA-5m-WcA"/>
-                                                <constraint firstAttribute="bottom" secondItem="nXu-Uk-eTn" secondAttribute="bottom" id="hgS-2O-eCA"/>
-                                                <constraint firstItem="nXu-Uk-eTn" firstAttribute="top" secondItem="asN-MQ-4YS" secondAttribute="top" id="lUv-J7-Bgs"/>
-                                                <constraint firstAttribute="bottom" secondItem="UVa-9W-0dQ" secondAttribute="bottom" id="nrJ-2B-KAM"/>
+                                                <constraint firstAttribute="width" secondItem="UVa-9W-0dQ" secondAttribute="height" multiplier="1:1" id="kAJ-80-yPi"/>
                                             </constraints>
+                                            <state key="normal" image="Minus">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="defaultBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="decrement:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Jcs-2d-k6l"/>
+                                            </connections>
+                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Iqn-Lp-XM7">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9h-T1-qYR">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2au-jV-6iy">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-Uk-eTn" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="nXu-Uk-eTn" secondAttribute="height" multiplier="1:1" id="G15-ia-3A5"/>
+                                            </constraints>
+                                            <state key="normal" image="Plus">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="defaultBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackground">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="increment:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Pqq-KD-VNb"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="asN-MQ-4YS" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" id="DL7-CK-2Da"/>
-                                        <constraint firstAttribute="bottom" secondItem="asN-MQ-4YS" secondAttribute="bottom" id="Qk8-r3-8YM"/>
+                                        <constraint firstItem="UVa-9W-0dQ" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" id="72c-oY-bp6"/>
+                                        <constraint firstItem="UVa-9W-0dQ" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="AyJ-WL-U1w"/>
+                                        <constraint firstItem="Iqn-Lp-XM7" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" id="E5k-jD-xPS"/>
+                                        <constraint firstAttribute="bottom" secondItem="nXu-Uk-eTn" secondAttribute="bottom" id="HaN-xH-8yH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Iqn-Lp-XM7" secondAttribute="bottom" id="MEg-5n-SoR"/>
+                                        <constraint firstAttribute="trailing" secondItem="nXu-Uk-eTn" secondAttribute="trailing" id="ONJ-T4-c3O"/>
+                                        <constraint firstAttribute="bottom" secondItem="UVa-9W-0dQ" secondAttribute="bottom" id="Xpa-2A-c5B"/>
                                         <constraint firstItem="lNo-kM-HaC" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="b8d-gn-ZG5"/>
-                                        <constraint firstAttribute="trailing" secondItem="asN-MQ-4YS" secondAttribute="trailing" id="iSa-Yd-nTd"/>
-                                        <constraint firstItem="asN-MQ-4YS" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="nvX-q3-IFt"/>
+                                        <constraint firstItem="nXu-Uk-eTn" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="p2p-vp-23f"/>
                                         <constraint firstAttribute="bottom" secondItem="lNo-kM-HaC" secondAttribute="bottom" id="r7e-Un-IUU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Iqn-Lp-XM7" secondAttribute="trailing" constant="103" id="85b-D2-Nda"/>
                                     <constraint firstAttribute="trailing" secondItem="lNo-kM-HaC" secondAttribute="trailing" id="EeT-Bc-DWT"/>
                                     <constraint firstItem="lNo-kM-HaC" firstAttribute="leading" secondItem="WCw-Qf-5nD" secondAttribute="leading" id="Oiy-L0-2g1"/>
+                                    <constraint firstItem="Iqn-Lp-XM7" firstAttribute="leading" secondItem="WCw-Qf-5nD" secondAttribute="leading" constant="103" id="VIQ-aa-gNR"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="countLabel" destination="2au-jV-6iy" id="hJL-yh-589"/>
@@ -489,6 +485,6 @@
         <image name="Plus" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h0h-hl-aEE"/>
+        <segue reference="C9V-04-Jmy"/>
     </inferredMetricsTieBreakers>
 </document>
