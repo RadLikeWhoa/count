@@ -87,33 +87,37 @@ class DetailViewController: UIViewController {
     }
     
     private func configureView() {
-        if let counter = counter {
-            navigationItem.title = counter.title
-            
-            if let gradientView = gradientView {
-                gradientView.gradient = counter.gradient
-            }
-            
-            if let counterLabel = counterLabel {
-                counterLabel.text = "\(counter.getCount())"
-            }
+        guard let counter = counter else {
+            return
+        }
+        
+        navigationItem.title = counter.title
+        
+        if let gradientView = gradientView {
+            gradientView.gradient = counter.gradient
+        }
+        
+        if let counterLabel = counterLabel {
+            counterLabel.text = "\(counter.getCount())"
         }
     }
-    
+
     private func showOverlay() {
-        if let window = UIApplication.shared.windows.last {
-            let view = UIImageView(frame: window.bounds)
-            view.image = UIImage(named: window.bounds.height > 666 ? "intro" : "intro-alt")
-            
-            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailViewController.closeOverlay)))
-            view.isUserInteractionEnabled = true
-            view.alpha = 0
-            
-            window.addSubview(view)
-            
-            UIView.animate(withDuration: 0.2) {
-                view.alpha = 1
-            }
+        guard let window = UIApplication.shared.windows.last else {
+            return
+        }
+        
+        let view = UIImageView(frame: window.bounds)
+        view.image = UIImage(named: window.bounds.height > 666 ? "intro" : "intro-alt")
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailViewController.closeOverlay)))
+        view.isUserInteractionEnabled = true
+        view.alpha = 0
+        
+        window.addSubview(view)
+        
+        UIView.animate(withDuration: 0.2) {
+            view.alpha = 1
         }
     }
     
@@ -122,10 +126,10 @@ class DetailViewController: UIViewController {
         
         UIView.animate(withDuration: 0.2, animations: {
             view.alpha = 0
-        }) { complete in
+        }, completion: { complete in
             view.removeFromSuperview()
             UserDefaults.standard.set(true, forKey: "helpViewed")
-        }
+        })
     }
     
     // MARK: - Actions
@@ -148,16 +152,18 @@ class DetailViewController: UIViewController {
     }
     
     private func modifyCount(action: ButtonAction) {
-        if let counter = counter {
-            if action == .increment {
-                counter.increment()
-            } else {
-                counter.decrement()
-            }
+        guard let counter = counter else {
+            return
+        }
+        
+        if action == .increment {
+            counter.increment()
+        } else {
+            counter.decrement()
+        }
             
-            if let counterLabel = counterLabel {
-                counterLabel.text = "\(counter.getCount())"
-            }
+        if let counterLabel = counterLabel {
+            counterLabel.text = "\(counter.getCount())"
         }
     }
     

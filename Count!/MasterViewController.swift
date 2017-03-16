@@ -41,18 +41,14 @@ class MasterViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let counter: Counter
-                
-                if isSearching() {
-                    counter = filteredCounters[indexPath.row]
-                } else {
-                    counter = counters[indexPath.row]
-                }
-                
-                let controller = segue.destination as! DetailViewController
-                controller.counter = counter
+            guard let indexPath = tableView.indexPathForSelectedRow else {
+                return
             }
+            
+            let counter = isSearching() ? filteredCounters[indexPath.row] : counters[indexPath.row]
+            
+            let controller = segue.destination as! DetailViewController
+            controller.counter = counter
         } else if segue.identifier == "addItem" {
             let controller = (segue.destination as! UINavigationController).topViewController as! EditViewController
             controller.isNew = true
