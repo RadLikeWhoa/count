@@ -9,19 +9,19 @@
         <!--Navigation Controller-->
         <scene sceneID="jEd-Oy-cTV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oTv-1d-m86" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="kw4-jf-cEV" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nfE-bR-uaU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nfE-bR-uaU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1843137255" green="0.50196078430000002" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.24705882352941178" green="0.69803921568627447" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="1xe-0J-pTB" kind="relationship" relationship="rootViewController" id="0kJ-qc-gil"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTv-1d-m86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="732" y="363"/>
         </scene>
