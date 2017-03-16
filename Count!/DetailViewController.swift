@@ -13,8 +13,7 @@ class DetailViewController: UIViewController {
     // MARK: - Properties
     
     private let options = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    private let confirmReset = UIAlertController(title: "Reset Counter?", message: "Do you really want to reset your counter back to 0?", preferredStyle: .alert)
-    private let confirmDelete = UIAlertController(title: "Delete Counter?", message: "Do you really want to delete your counter?", preferredStyle: .alert)
+    private let confirmReset = UIAlertController(title: "Reset Counter", message: nil, preferredStyle: .alert)
     
     private enum ButtonAction {
         case increment
@@ -38,7 +37,6 @@ class DetailViewController: UIViewController {
         
         setupOptions()
         setupReset()
-        setupDelete()
     }
     
     // - MARK: Alerts
@@ -47,7 +45,10 @@ class DetailViewController: UIViewController {
         options.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         options.addAction(UIAlertAction(title: "Reset", style: .default, handler: { action in
-            self.showResetConfirmation()
+            if let counter = self.counter {
+                counter.reset()
+                self.counterLabel.text = "\(counter.getCount())"
+            }
         }))
         
         options.addAction(UIAlertAction(title: "Edit", style: .default, handler: { action in
@@ -55,7 +56,7 @@ class DetailViewController: UIViewController {
         }))
         
         options.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            self.showDeleteConfirmation()
+            self.performSegue(withIdentifier: "deleteItem", sender: self)
         }))
     }
     
@@ -67,14 +68,6 @@ class DetailViewController: UIViewController {
                 counter.reset()
                 self.counterLabel.text = "\(counter.getCount())"
             }
-        }))
-    }
-    
-    private func setupDelete() {
-        confirmDelete.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        confirmDelete.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            self.performSegue(withIdentifier: "deleteItem", sender: self)
         }))
     }
     
@@ -141,20 +134,6 @@ class DetailViewController: UIViewController {
         present(options, animated: true, completion: nil)
     }
     
-    private func showResetConfirmation() {
-        if let counter = counter {
-            confirmReset.message = "Do you really want to reset \"\(counter.title)\" back to 0?"
-            present(confirmReset, animated: true, completion: nil)
-        }
-    }
-    
-    private func showDeleteConfirmation() {
-        if let counter = counter {
-            confirmDelete.message = "Do you really want to delete \"\(counter.title)\"?"
-            present(confirmDelete, animated: true, completion: nil)
-        }
-    }
-    
     // MARK: - Counter
     
     private func scheduleTimer(action: ButtonAction) {
@@ -217,7 +196,7 @@ class DetailViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            showResetConfirmation()
+            present(confirmReset, animated: true, completion: nil)
         }
     }
     
