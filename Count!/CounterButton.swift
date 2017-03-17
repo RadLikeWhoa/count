@@ -23,6 +23,7 @@ class CounterButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = defaultBackground
+        isExclusiveTouch = true
     }
     
     // MARK: - Events

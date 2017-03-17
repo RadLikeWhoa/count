@@ -172,6 +172,7 @@ class DetailViewController: UIViewController {
     @IBAction func touchDown(_ sender: UIButton) {
         let action: ButtonAction = sender.tag == 1 ? .increment : .decrement
         
+        timer?.invalidate()
         modifyCount(action: action)
         scheduleTimer(action: action)
     }
