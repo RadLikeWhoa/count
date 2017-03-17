@@ -28,7 +28,10 @@ class MasterViewController: UITableViewController {
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        
         definesPresentationContext = true
+        
+        searchController.searchBar.tintColor = UIColor(hex: 0x283048)
         tableView.tableHeaderView = searchController.searchBar
     }
     

@@ -15,9 +15,7 @@ struct Gradient {
     static let availableGradients = [
         Gradient("Sha La La", from: UIColor(hex: 0xE29587), to: UIColor(hex: 0xD66D75)),
         Gradient("Cherry", from: UIColor(hex: 0xF45C43), to: UIColor(hex: 0xEB3349)),
-        Gradient("Titanium", from: UIColor(hex: 0x859398), to: UIColor(hex: 0x283048)),
         Gradient("Dirty Fog", from: UIColor(hex: 0x8CA6DB), to: UIColor(hex: 0xB993D6)),
-        Gradient("Shore", from: UIColor(hex: 0x70e1f5), to: UIColor(hex: 0xffd194)),
         Gradient("Instagram", from: UIColor(hex: 0x517fa4), to: UIColor(hex: 0x243949)),
         Gradient("Piglet", from: UIColor(hex: 0xffdde1), to: UIColor(hex: 0xee9ca7)),
         Gradient("Master Card", from: UIColor(hex: 0xeea849), to: UIColor(hex: 0xf46b45)),
