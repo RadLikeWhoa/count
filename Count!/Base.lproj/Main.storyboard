@@ -56,6 +56,8 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="touchDown:" destination="JEX-9P-axG" eventType="touchDown" id="6c8-Lg-eRe"/>
+                                                    <action selector="touchDown:" destination="JEX-9P-axG" eventType="touchDragEnter" id="UJe-5L-8Eb"/>
+                                                    <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchDragExit" id="D9X-r0-57v"/>
                                                     <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchUpOutside" id="EsN-sJ-wRI"/>
                                                     <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchUpInside" id="zTp-BV-cuq"/>
                                                 </connections>
@@ -63,9 +65,11 @@
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJi-Vr-ms4" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <action selector="touchDown:" destination="JEX-9P-axG" eventType="touchDragEnter" id="WmO-XQ-Sdn"/>
                                                     <action selector="touchDown:" destination="JEX-9P-axG" eventType="touchDown" id="f4v-9T-h5A"/>
                                                     <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchUpOutside" id="FCB-am-OfJ"/>
                                                     <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchUpInside" id="INl-Fg-WQJ"/>
+                                                    <action selector="touchUp:" destination="JEX-9P-axG" eventType="touchDragExit" id="y88-yR-qnB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -149,7 +153,7 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L0C-ab-PAJ" id="UYe-yx-EiQ">
-                                            <frame key="frameInset" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzC-Xc-pmj">
@@ -184,7 +188,7 @@
                                         <rect key="frame" x="0.0" y="149" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="068-aW-6hQ" id="czC-d3-hX6">
-                                            <frame key="frameInset" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-ew-iSn">
@@ -216,7 +220,7 @@
                                         <rect key="frame" x="0.0" y="199" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y6U-nY-rTY" id="ptT-fp-Nxt">
-                                            <frame key="frameInset" width="342" height="49.5"/>
+                                            <frame key="frameInset" width="342" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSj-9v-LNp">
@@ -307,10 +311,10 @@
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="colorCell" rowHeight="88" id="5gT-8H-xRw" customClass="ColorTableViewCell" customModule="Count_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="119.5" width="375" height="88"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5gT-8H-xRw" id="3yA-Gk-dOA">
-                                    <frame key="frameInset" width="375" height="87.5"/>
+                                    <frame key="frameInset" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WY7-bv-rhy" customClass="GradientView" customModule="Count_" customModuleProvider="target">
@@ -371,7 +375,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <frame key="frameInset" width="375" height="87.5"/>
+                                    <frame key="frameInset" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-kM-HaC" customClass="GradientView" customModule="Count_" customModuleProvider="target">
@@ -490,6 +494,6 @@
         <image name="Plus" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C9V-04-Jmy"/>
+        <segue reference="h0h-hl-aEE"/>
     </inferredMetricsTieBreakers>
 </document>
