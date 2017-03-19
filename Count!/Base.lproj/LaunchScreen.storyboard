@@ -12,7 +12,7 @@
                 <navigationController id="kw4-jf-cEV" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nfE-bR-uaU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nfE-bR-uaU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.15686274509803921" green="0.18823529411764706" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>

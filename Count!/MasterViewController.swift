@@ -68,6 +68,8 @@ class MasterViewController: UITableViewController {
                 let indexPath = IndexPath(row: 0, section: 0)
                 tableView.insertRows(at: [indexPath], with: .automatic)
                 
+                tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+                
                 toggleEditItem()
             }
         } else if segue.identifier == "deleteItem" {
