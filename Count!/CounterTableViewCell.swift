@@ -55,6 +55,9 @@ class CounterTableViewCell: UITableViewCell {
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
+        incrementer.isUserInteractionEnabled = !editing
+        decrementer.isUserInteractionEnabled = !editing
+        
         UIView.animate(withDuration: 0.2) {
             self.incrementer.alpha = editing ? 0 : 1
             self.decrementer.alpha = editing ? 0 : 1
