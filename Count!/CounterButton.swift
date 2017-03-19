@@ -19,28 +19,19 @@ class CounterButton: UIButton {
     }
     
     @IBInspectable var highlightedBackground: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+    
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.3, delay: 0, options: .allowUserInteraction, animations: {
+                self.backgroundColor = self.isHighlighted ? self.highlightedBackground : self.defaultBackground
+            })
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = defaultBackground
         isExclusiveTouch = true
-    }
-    
-    // MARK: - Events
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        layer.removeAllAnimations()
-        backgroundColor = highlightedBackground
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        
-        UIView.animate(withDuration: 0.3, delay: 0, options: .allowUserInteraction, animations: {
-            self.backgroundColor = self.defaultBackground
-        })
     }
 
 }

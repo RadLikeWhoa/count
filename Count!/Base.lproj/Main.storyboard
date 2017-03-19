@@ -381,7 +381,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-kM-HaC" customClass="GradientView" customModule="Count_" customModuleProvider="target">
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-9W-0dQ" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-9W-0dQ" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UVa-9W-0dQ" secondAttribute="height" multiplier="1:1" id="kAJ-80-yPi"/>
@@ -416,7 +416,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-Uk-eTn" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-Uk-eTn" customClass="CounterButton" customModule="Count_" customModuleProvider="target">
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="nXu-Uk-eTn" secondAttribute="height" multiplier="1:1" id="G15-ia-3A5"/>
@@ -491,11 +491,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Minus" width="25" height="25"/>
+        <image name="Minus" width="33" height="33"/>
         <image name="MoreIcon" width="22" height="22"/>
-        <image name="Plus" width="25" height="25"/>
+        <image name="Plus" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h0h-hl-aEE"/>
+        <segue reference="C9V-04-Jmy"/>
     </inferredMetricsTieBreakers>
 </document>
