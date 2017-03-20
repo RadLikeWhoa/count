@@ -24,7 +24,7 @@ class CounterTableViewCell: UITableViewCell {
     @IBOutlet weak var decrementer: CounterButton!
     @IBOutlet weak var gradientView: GradientView!
     
-    private let tapticGenerator = UINotificationFeedbackGenerator()
+    private let tapticGenerator = UIImpactFeedbackGenerator(style: .light)
     
     // MARK: - View
     
@@ -42,7 +42,7 @@ class CounterTableViewCell: UITableViewCell {
         if let counter = counter {
             counter.decrement()
             countLabel.text = "\(counter.getCount())"
-            tapticGenerator.notificationOccurred(.warning)
+            tapticGenerator.impactOccurred()
         }
     }
     
@@ -50,7 +50,7 @@ class CounterTableViewCell: UITableViewCell {
         if let counter = counter {
             counter.increment()
             countLabel.text = "\(counter.getCount())"
-            tapticGenerator.notificationOccurred(.success)
+            tapticGenerator.impactOccurred()
         }
     }
     

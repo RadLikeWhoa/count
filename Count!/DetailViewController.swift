@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var counterLabel: UILabel!
     
-    private let tapticGenerator = UINotificationFeedbackGenerator()
+    private let tapticGenerator = UIImpactFeedbackGenerator(style: .light)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -174,11 +174,7 @@ class DetailViewController: UIViewController {
     @IBAction func touchDown(_ sender: UIButton) {
         let action: ButtonAction = sender.tag == 1 ? .increment : .decrement
         
-        if action == .increment {
-            tapticGenerator.notificationOccurred(.success)
-        } else {
-            tapticGenerator.notificationOccurred(.warning)
-        }
+        tapticGenerator.impactOccurred()
         
         timer?.invalidate()
         modifyCount(action: action)
