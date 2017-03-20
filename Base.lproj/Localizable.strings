@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Count!
+
+  Created by Sacha Schmid on 20.3.17.
+
+*/
+
+Reset_Counter_Title = "Reset Counter";
+Cancel_Alert = "Cancel";
+Reset_Counter = "Reset";
+Edit_Counter = "Edit";
+Delete_Counter = "Delete";
+Edit_Counter_Title = "Edit Counter";

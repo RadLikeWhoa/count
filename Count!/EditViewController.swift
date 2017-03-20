@@ -40,7 +40,7 @@ class EditViewController: UITableViewController {
     
     private func configureView() {
         if !isNew {
-            navigationItem.title = "Edit Counter"
+            navigationItem.title = NSLocalizedString("Edit_Counter_Title", comment: "The title for editing an existing counter")
         }
         
         if let offsetTextField = offsetTextField {

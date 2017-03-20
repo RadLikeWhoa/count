@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     // MARK: - Properties
     
     private let options = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    private let confirmReset = UIAlertController(title: "Reset Counter", message: nil, preferredStyle: .alert)
+    private let confirmReset = UIAlertController(title: NSLocalizedString("Reset_Counter_Title", comment: "The prompt title to confirm counter reset"), message: nil, preferredStyle: .alert)
     
     private enum ButtonAction {
         case increment
@@ -44,28 +44,28 @@ class DetailViewController: UIViewController {
     // - MARK: Alerts
     
     private func setupOptions() {
-        options.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        options.addAction(UIAlertAction(title: NSLocalizedString("Cancel_Alert", comment: "The title for the cancel action of an alert"), style: .cancel, handler: nil))
         
-        options.addAction(UIAlertAction(title: "Reset", style: .default, handler: { action in
+        options.addAction(UIAlertAction(title: NSLocalizedString("Reset_Counter", comment: "The title for the reset action of the options alert"), style: .default, handler: { action in
             if let counter = self.counter {
                 counter.reset()
                 self.counterLabel.text = "\(counter.getCount())"
             }
         }))
         
-        options.addAction(UIAlertAction(title: "Edit", style: .default, handler: { action in
+        options.addAction(UIAlertAction(title: NSLocalizedString("Edit_Counter", comment: "The title for the edit action of the options alert"), style: .default, handler: { action in
             self.performSegue(withIdentifier: "editItem", sender: nil)
         }))
         
-        options.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+        options.addAction(UIAlertAction(title: NSLocalizedString("Delete_Counter", comment: "The title for the reset action of the options alert"), style: .destructive, handler: { action in
             self.performSegue(withIdentifier: "deleteItem", sender: self)
         }))
     }
     
     private func setupReset() {
-        confirmReset.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        confirmReset.addAction(UIAlertAction(title: NSLocalizedString("Cancel_Alert", comment: "The title for the cancel action of an alert"), style: .cancel, handler: nil))
         
-        confirmReset.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { action in
+        confirmReset.addAction(UIAlertAction(title: NSLocalizedString("Reset_Counter", comment: "The title for the reset action of the resert alert"), style: .destructive, handler: { action in
             if let counter = self.counter {
                 counter.reset()
                 self.counterLabel.text = "\(counter.getCount())"
@@ -110,7 +110,7 @@ class DetailViewController: UIViewController {
         }
         
         let view = UIImageView(frame: window.bounds)
-        view.image = UIImage(named: window.bounds.height > 666 ? "intro" : "intro-alt")
+        view.image = UIImage(named: window.bounds.height > 735 ? "intro" : window.bounds.height > 666 ? "intro-1" : "intro-alt")
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailViewController.closeOverlay)))
         view.isUserInteractionEnabled = true

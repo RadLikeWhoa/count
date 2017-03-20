@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "0"; ObjectID = "2au-jV-6iy"; */
+"2au-jV-6iy.text" = "0";
+
+/* Class = "UIButton"; accessibilityLabel = "Increase Counter"; ObjectID = "6bk-Pc-qDu"; */
+"6bk-Pc-qDu.accessibilityLabel" = "Zähler erhöhen";
+
+/* Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz"; */
+"7bK-jq-Zjz.title" = "Master";
+
+/* Class = "UINavigationItem"; title = "Pick Color"; ObjectID = "AC2-lE-H4W"; */
+"AC2-lE-H4W.title" = "Farbe auswählen";
+
+/* Class = "UIButton"; accessibilityLabel = "Decrease Counter"; ObjectID = "BJi-Vr-ms4"; */
+"BJi-Vr-ms4.accessibilityLabel" = "Zähler verringern";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "De2-rz-G49"; */
+"De2-rz-G49.text" = "Label";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "Detail";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Master";
+
+/* Class = "UIButton"; accessibilityLabel = "Decrease Counter"; ObjectID = "UVa-9W-0dQ"; */
+"UVa-9W-0dQ.accessibilityLabel" = "Zähler verringern";
+
+/* Class = "UILabel"; text = "Counter Name"; ObjectID = "W9h-T1-qYR"; */
+"W9h-T1-qYR.text" = "Counter Name";
+
+/* Class = "UINavigationItem"; title = "Count!"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "Count!";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "cRN-4r-hd4"; */
+"cRN-4r-hd4.text" = "Stand";
+
+/* Class = "UITextField"; placeholder = "0"; ObjectID = "dqe-ew-iSn"; */
+"dqe-ew-iSn.placeholder" = "0";
+
+/* Class = "UITextField"; placeholder = "Untitled"; ObjectID = "hOe-bE-wwp"; */
+"hOe-bE-wwp.placeholder" = "Unbenannt";
+
+/* Class = "UINavigationItem"; title = "Add Counter"; ObjectID = "hPc-Ee-ofV"; */
+"hPc-Ee-ofV.title" = "Zähler hinzufügen";
+
+/* Class = "UILabel"; text = "Color"; ObjectID = "iSj-9v-LNp"; */
+"iSj-9v-LNp.text" = "Farbe";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "jzC-Xc-pmj"; */
+"jzC-Xc-pmj.text" = "Titel";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "k1L-34-iQS"; */
+"k1L-34-iQS.text" = "0";
+
+/* Class = "UINavigationItem"; title = "Detail"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Detail";
+
+/* Class = "UIButton"; accessibilityLabel = "Increase Counter"; ObjectID = "nXu-Uk-eTn"; */
+"nXu-Uk-eTn.accessibilityLabel" = "Zähler erhöhen";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wCN-qy-t37"; */
+"wCN-qy-t37.text" = "Label";
