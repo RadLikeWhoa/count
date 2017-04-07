@@ -13,9 +13,11 @@ class MasterViewController: UITableViewController {
     // MARK: - Properties 
     
     private var counters = [Counter]()
-    fileprivate var filteredCounters = [Counter]()
+    private var filteredCounters = [Counter]()
     
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    private var emptyStateGesture: UITapGestureRecognizer? = nil
     
     // MARK: - View
 
@@ -38,6 +40,7 @@ class MasterViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        toggleEmptyState()
     }
 
     // MARK: - Segues
@@ -126,6 +129,7 @@ class MasterViewController: UITableViewController {
             counters.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             toggleEditItem()
+            toggleEmptyState()
         }
     }
     
@@ -179,6 +183,30 @@ class MasterViewController: UITableViewController {
             setEditing(false, animated: false)
         } else if navigationItem.leftBarButtonItem == nil {
             navigationItem.leftBarButtonItem = editButtonItem
+        }
+    }
+    
+    // MARK: - Empty State
+    
+    private func toggleEmptyState() {
+        if counters.count == 0 {
+            guard let window = UIApplication.shared.windows.last else {
+                return
+            }
+            
+            let backgroundImage = UIImage(named: window.bounds.height > 735 ? "emptystate-iphone6plus.png" : window.bounds.height > 666 ? "emptystate-iphone6" : "emptystate-iphone5")
+            let imageView = UIImageView(image: backgroundImage)
+            
+            emptyStateGesture = UITapGestureRecognizer(target: self, action: #selector(addItem))
+            
+            tableView.backgroundView = imageView
+            tableView.addGestureRecognizer(emptyStateGesture!)
+        } else {
+            tableView.backgroundView = nil
+            
+            if let emptyStateGesture = emptyStateGesture {
+                tableView.removeGestureRecognizer(emptyStateGesture)
+            }
         }
     }
     
