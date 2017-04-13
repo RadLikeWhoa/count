@@ -12,3 +12,4 @@ Reset_Counter = "Zurücksetzen";
 Edit_Counter = "Bearbeiten";
 Delete_Counter = "Löschen";
 Edit_Counter_Title = "Zähler bearbeiten";
+Empty_Message = "Noch keine Zähler :(";

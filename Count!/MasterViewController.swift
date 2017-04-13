@@ -190,16 +190,17 @@ class MasterViewController: UITableViewController {
     
     private func toggleEmptyState() {
         if counters.count == 0 {
-            guard let window = UIApplication.shared.windows.last else {
-                return
-            }
-            
-            let backgroundImage = UIImage(named: window.bounds.height > 735 ? "emptystate-iphone6plus.png" : window.bounds.height > 666 ? "emptystate-iphone6" : "emptystate-iphone5")
-            let imageView = UIImageView(image: backgroundImage)
+            let emptyLabel = UILabel()
+            emptyLabel.text = NSLocalizedString("Empty_Message", comment: "The prompt to create the first counter")
+            emptyLabel.textAlignment = .center
+            emptyLabel.numberOfLines = 0
+            emptyLabel.textColor = UIColor(hex: 0xaaaaaa)
+            emptyLabel.font = UIFont(name: ".SFUIText-Medium", size: 18)
+            emptyLabel.sizeToFit()
             
             emptyStateGesture = UITapGestureRecognizer(target: self, action: #selector(addItem))
             
-            tableView.backgroundView = imageView
+            tableView.backgroundView = emptyLabel
             tableView.addGestureRecognizer(emptyStateGesture!)
         } else {
             tableView.backgroundView = nil

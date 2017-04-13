@@ -12,3 +12,4 @@ Reset_Counter = "Reset";
 Edit_Counter = "Edit";
 Delete_Counter = "Delete";
 Edit_Counter_Title = "Edit Counter";
+Empty_Message = "No counters yet :(";
