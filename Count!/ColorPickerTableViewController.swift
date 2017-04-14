@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ColorPickerTableViewController: UITableViewController {
     
@@ -14,13 +15,8 @@ class ColorPickerTableViewController: UITableViewController {
     
     var selectedGradient: Gradient?
     
-    private let availableGradients = Gradient.availableGradients
-    
-    // MARK: - View
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let realm = try! Realm()
+    private lazy var availableGradients: Results<Gradient> = { self.realm.objects(Gradient.self) }()
     
     // MARK: - Table View Data Source
     

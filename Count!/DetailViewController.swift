@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     
     // MARK: - Properties
+    
+    private let realm = try! Realm()
     
     private let options = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     private let confirmReset = UIAlertController(title: NSLocalizedString("Reset_Counter_Title", comment: "The prompt title to confirm counter reset"), message: nil, preferredStyle: .alert)
@@ -48,7 +51,10 @@ class DetailViewController: UIViewController {
         
         options.addAction(UIAlertAction(title: NSLocalizedString("Reset_Counter", comment: "The title for the reset action of the options alert"), style: .default, handler: { action in
             if let counter = self.counter {
+                self.realm.beginWrite()
                 counter.reset()
+                try! self.realm.commitWrite()
+                
                 self.counterLabel.text = "\(counter.getCount())"
             }
         }))
@@ -67,7 +73,10 @@ class DetailViewController: UIViewController {
         
         confirmReset.addAction(UIAlertAction(title: NSLocalizedString("Reset_Counter", comment: "The title for the reset action of the resert alert"), style: .destructive, handler: { action in
             if let counter = self.counter {
+                self.realm.beginWrite()
                 counter.reset()
+                try! self.realm.commitWrite()
+                
                 self.counterLabel.text = "\(counter.getCount())"
             }
         }))
@@ -158,11 +167,15 @@ class DetailViewController: UIViewController {
             return
         }
         
+        realm.beginWrite()
+        
         if action == .increment {
             counter.increment()
         } else {
             counter.decrement()
         }
+        
+        try! realm.commitWrite()
             
         if let counterLabel = counterLabel {
             counterLabel.text = "\(counter.getCount())"

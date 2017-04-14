@@ -40,7 +40,7 @@ class GradientView: UIView {
     private func configureView() {
         if let gradient = gradient {
             let gradientLayer = layer as! CAGradientLayer
-            gradientLayer.colors = [gradient.from.cgColor, gradient.to.cgColor]
+            gradientLayer.colors = [ gradient.from!.cgColor, gradient.to!.cgColor ]
         }
     }
     

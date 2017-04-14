@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CounterTableViewCell: UITableViewCell {
     
     // MARK: - Properties
+    
+    let realm = try! Realm()
     
     var counter: Counter? {
         didSet {
@@ -40,7 +43,10 @@ class CounterTableViewCell: UITableViewCell {
     
     @IBAction func decrement(_ sender: UIButton) {
         if let counter = counter {
+            realm.beginWrite()
             counter.decrement()
+            try! realm.commitWrite()
+            
             countLabel.text = "\(counter.getCount())"
             tapticGenerator.impactOccurred()
         }
@@ -48,7 +54,10 @@ class CounterTableViewCell: UITableViewCell {
     
     @IBAction func increment(_ sender: UIButton) {
         if let counter = counter {
+            realm.beginWrite()
             counter.increment()
+            try! realm.commitWrite()
+            
             countLabel.text = "\(counter.getCount())"
             tapticGenerator.impactOccurred()
         }

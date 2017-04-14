@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MasterViewController: UITableViewController {
     
     // MARK: - Properties 
     
-    private var counters = [Counter]()
+    private let realm = try! Realm()
+    
+    private lazy var counters: Results<Counter> = { self.realm.objects(Counter.self) }()
     private var filteredCounters = [Counter]()
     
     private let searchController = UISearchController(searchResultsController: nil)
@@ -65,21 +68,19 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "unwindToMaster" {
             let source = segue.source as! EditViewController
             
+            tableView.reloadData()
+            
             if (source.isNew) {
-                counters.insert(source.counter, at: 0)
-                
-                let indexPath = IndexPath(row: 0, section: 0)
-                tableView.insertRows(at: [indexPath], with: .automatic)
-                
-                tableView.scrollToRow(at: indexPath, at: .top, animated: false)
-                
+                tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
                 toggleEditItem()
             }
         } else if segue.identifier == "deleteItem" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                counters.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
+                try! realm.write() {
+                    realm.delete(counters[indexPath.row])
+                }
                 
+                tableView.reloadData()
                 toggleEditItem()
             }
         }
@@ -126,18 +127,22 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            counters.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            try! realm.write() {
+                realm.delete(counters[indexPath.row])
+            }
+            
+            tableView.reloadData()
+            setEditing(false, animated: false)
             toggleEditItem()
             toggleEmptyState()
         }
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let moving = counters[sourceIndexPath.row]
+        // let moving = counters[sourceIndexPath.row]
         
-        counters.remove(at: sourceIndexPath.row)
-        counters.insert(moving, at: destinationIndexPath.row)
+        // counters.remove(at: sourceIndexPath.row)
+        // counters.insert(moving, at: destinationIndexPath.row)
     }
     
     // MARK: - Table View Styling

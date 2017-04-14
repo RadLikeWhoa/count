@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EditViewController: UITableViewController {
     
     // MARK: - Properties
+    
+    private let realm = try! Realm()
     
     var counter: Counter = Counter() {
         didSet {
@@ -52,7 +55,14 @@ class EditViewController: UITableViewController {
             saveButton.isEnabled = !(titleTextField.text?.isEmpty)!
         }
         
-        colorize(with: counter.gradient)
+        if counter.gradient == nil {
+            let gradients = realm.objects(Gradient.self)
+            let random = Int(arc4random_uniform(UInt32(gradients.count)))
+            
+            counter.gradient = gradients[random]
+        }
+        
+        colorize(with: counter.gradient!)
     }
     
     private func colorize(with: Gradient) {
@@ -75,9 +85,9 @@ class EditViewController: UITableViewController {
     }
     
     @IBAction func saveCounter(_ sender: AnyObject) {
-        if !isNew {
-            counter.reset()
-        }
+        realm.beginWrite()
+        
+        counter.reset()
         
         counter.title = titleTextField.text!
         
@@ -87,8 +97,16 @@ class EditViewController: UITableViewController {
             counter.reset()
         }
         
+        try! realm.commitWrite()
+        
         titleTextField.resignFirstResponder()
         offsetTextField.resignFirstResponder()
+        
+        if isNew {
+            try! realm.write() {
+                realm.add(counter)
+            }
+        }
         
         performSegue(withIdentifier: isNew ? "unwindToMaster" : "unwindToDetail", sender: self)
     }
@@ -106,7 +124,10 @@ class EditViewController: UITableViewController {
             let controller = segue.source as! ColorPickerTableViewController
             
             if let gradient = controller.selectedGradient {
+                realm.beginWrite()
                 counter.gradient = gradient
+                try! realm.commitWrite()
+                
                 colorize(with: gradient)
             }
         }

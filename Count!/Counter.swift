@@ -7,17 +7,21 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Counter {
+class Counter: Object {
     
     // MARK: - Properties
     
-    var title: String
-    var gradient: Gradient
+    dynamic var id: String = NSUUID().uuidString
+    dynamic var title: String = ""
+    dynamic var gradient: Gradient?
     
-    private var count: Int = 0
+    private dynamic var count: Int = 0
     
-    init(title: String = "", gradient: Gradient = Gradient.getRandomGradient()) {
+    convenience init(title: String = "", gradient: Gradient?) {
+        self.init()
+        
         self.title = title
         self.gradient = gradient
     }
@@ -40,6 +44,12 @@ class Counter {
     
     public func reset() {
         count = 0
+    }
+    
+    // MARK: - Realm
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
 }
