@@ -85,19 +85,16 @@ class EditViewController: UITableViewController {
     }
     
     @IBAction func saveCounter(_ sender: AnyObject) {
-        realm.beginWrite()
-        
-        counter.reset()
-        
-        counter.title = titleTextField.text!
-        
-        if let offset = Int(offsetTextField.text!) {
-            counter.increment(value: offset)
-        } else {
+        try! realm.write {
             counter.reset()
+            counter.title = titleTextField.text!
+            
+            if let offset = Int(offsetTextField.text!) {
+                counter.increment(value: offset)
+            } else {
+                counter.reset()
+            }
         }
-        
-        try! realm.commitWrite()
         
         titleTextField.resignFirstResponder()
         offsetTextField.resignFirstResponder()
@@ -124,9 +121,9 @@ class EditViewController: UITableViewController {
             let controller = segue.source as! ColorPickerTableViewController
             
             if let gradient = controller.selectedGradient {
-                realm.beginWrite()
-                counter.gradient = gradient
-                try! realm.commitWrite()
+                try! realm.write {
+                    counter.gradient = gradient
+                }
                 
                 colorize(with: gradient)
             }
