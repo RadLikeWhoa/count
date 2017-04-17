@@ -15,7 +15,8 @@ class MasterViewController: UITableViewController {
     
     private let realm = try! Realm()
     
-    private lazy var counters: Results<Counter> = { self.realm.objects(Counter.self) }()
+    private lazy var counters: List<Counter> = { self.realm.objects(CounterList.self).first!.items }()
+    // private var counters = List<Counter>()
     private var filteredCounters = [Counter]()
     
     private let searchController = UISearchController(searchResultsController: nil)
@@ -71,13 +72,20 @@ class MasterViewController: UITableViewController {
             tableView.reloadData()
             
             if (source.isNew) {
+                try! realm.write {
+                    counters.insert(source.counter, at: 0)
+                }
+                
+                tableView.reloadData()
                 tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
                 toggleEditItem()
             }
         } else if segue.identifier == "deleteItem" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                try! realm.write() {
-                    realm.delete(counters[indexPath.row])
+                try! realm.write {
+                    let counter = counters[indexPath.row]
+                    counters.remove(objectAtIndex: indexPath.row)
+                    realm.delete(counter)
                 }
                 
                 tableView.reloadData()
@@ -128,7 +136,9 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             try! realm.write() {
-                realm.delete(counters[indexPath.row])
+                let counter = counters[indexPath.row]
+                counters.remove(objectAtIndex: indexPath.row)
+                realm.delete(counter)
             }
             
             tableView.reloadData()
@@ -139,10 +149,11 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        // let moving = counters[sourceIndexPath.row]
+        try! realm.write {
+            counters.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        }
         
-        // counters.remove(at: sourceIndexPath.row)
-        // counters.insert(moving, at: destinationIndexPath.row)
+        tableView.reloadData()
     }
     
     // MARK: - Table View Styling

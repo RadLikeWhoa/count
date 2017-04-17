@@ -10,6 +10,7 @@
 		991EC53C1E6C85440011494B /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EC53B1E6C85440011494B /* CounterButton.swift */; };
 		99285FAE1EA0C56C0020DF90 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 99285FAD1EA0C56C0020DF90 /* Podfile */; };
 		99285FB01EA0CC260020DF90 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99285FAF1EA0CC260020DF90 /* Color.swift */; };
+		995059921EA14385005C166A /* CounterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995059911EA14385005C166A /* CounterList.swift */; };
 		99716C291E647B7F0016FEA6 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C281E647B7F0016FEA6 /* Counter.swift */; };
 		99716C2B1E647D2F0016FEA6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C2A1E647D2F0016FEA6 /* EditViewController.swift */; };
 		9999312B1E7FD768004D491F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9999312D1E7FD768004D491F /* Localizable.strings */; };
@@ -36,6 +37,7 @@
 		991EC53B1E6C85440011494B /* CounterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		99285FAD1EA0C56C0020DF90 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99285FAF1EA0CC260020DF90 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		995059911EA14385005C166A /* CounterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterList.swift; sourceTree = "<group>"; };
 		99716C281E647B7F0016FEA6 /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		99716C2A1E647D2F0016FEA6 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		999931251E7FD2B8004D491F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				99716C281E647B7F0016FEA6 /* Counter.swift */,
 				C2C6BCF31E69BA18005C4AB3 /* Gradient.swift */,
 				99285FAF1EA0CC260020DF90 /* Color.swift */,
+				995059911EA14385005C166A /* CounterList.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				99CE2C341E65F12900723BDA /* CounterTableViewCell.swift in Sources */,
 				C2C6BCF81E69BEAA005C4AB3 /* ColorTableViewCell.swift in Sources */,
 				99C89FDB1E604713006D4398 /* DetailViewController.swift in Sources */,
+				995059921EA14385005C166A /* CounterList.swift in Sources */,
 				99C89FD91E604713006D4398 /* MasterViewController.swift in Sources */,
 				99C89FD71E604713006D4398 /* AppDelegate.swift in Sources */,
 				991EC53C1E6C85440011494B /* CounterButton.swift in Sources */,

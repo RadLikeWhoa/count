@@ -20,8 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "helpViewed": false
         ])
         
+        if realm.objects(CounterList.self).count == 0 {
+            try! realm.write {
+                self.realm.add(CounterList())
+            }
+        }
+        
         if realm.objects(Gradient.self).count == 0 {
-            try! realm.write() {
+            try! realm.write {
                 let defaultGradients = [
                     Gradient(label: "Sha La La", from: Color(hex: 0xE29587), to: Color(hex: 0xD66D75)),
                     Gradient(label: "Cherry", from: Color(hex: 0xF45C43), to: Color(hex: 0xEB3349)),
