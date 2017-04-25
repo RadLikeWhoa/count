@@ -13,7 +13,7 @@ class MasterViewController: UITableViewController {
     
     // MARK: - Properties 
     
-    private let realm = try! Realm()
+    private lazy var realm: Realm = { try! Realm() }()
     
     private lazy var counters: List<Counter> = { self.realm.objects(CounterList.self).first!.items }()
     // private var counters = List<Counter>()
@@ -27,7 +27,7 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         if counters.count > 0 {
             navigationItem.leftBarButtonItem = editButtonItem
         }

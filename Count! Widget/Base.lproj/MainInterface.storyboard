@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S3y-Kg-cDn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="oby-nz-Dn5">
+            <objects>
+                <viewController id="S3y-Kg-cDn" customClass="TodayViewController" customModule="Count__Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1bI-mu-20w"/>
+                        <viewControllerLayoutGuide type="bottom" id="ULH-qe-QxQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hem-qu-klb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-aF-ULe" customClass="GradientView" customModule="Count__Widget" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="335" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6jd-lS-xa9">
+                                        <rect key="frame" x="177" y="11" width="88" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="88" id="aS0-MK-5p7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Duz-R2-wCg" customClass="CounterButton" customModule="Count__Widget" customModuleProvider="target">
+                                        <rect key="frame" x="276" y="11" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" label="Increase Counter"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Duz-R2-wCg" secondAttribute="height" multiplier="1:1" id="Kbo-sQ-9xa"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Plus">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultBackground">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackground">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="increment:" destination="S3y-Kg-cDn" eventType="touchUpInside" id="laS-6D-QyK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-PN-1Y7">
+                                        <rect key="frame" x="15" y="14" width="151" height="40"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="6jd-lS-xa9" firstAttribute="leading" secondItem="fcf-PN-1Y7" secondAttribute="trailing" constant="11" id="1EK-F9-a6y"/>
+                                    <constraint firstItem="Duz-R2-wCg" firstAttribute="top" secondItem="2BP-aF-ULe" secondAttribute="top" constant="11" id="2OM-aG-WhC"/>
+                                    <constraint firstItem="fcf-PN-1Y7" firstAttribute="top" secondItem="2BP-aF-ULe" secondAttribute="top" constant="14" id="4Nk-M0-dQD"/>
+                                    <constraint firstAttribute="bottom" secondItem="6jd-lS-xa9" secondAttribute="bottom" constant="11" id="AE6-He-Fht"/>
+                                    <constraint firstAttribute="bottom" secondItem="Duz-R2-wCg" secondAttribute="bottom" constant="11" id="B7x-6p-BkV"/>
+                                    <constraint firstItem="6jd-lS-xa9" firstAttribute="top" secondItem="2BP-aF-ULe" secondAttribute="top" constant="11" id="EZw-Y7-GVs"/>
+                                    <constraint firstItem="Duz-R2-wCg" firstAttribute="leading" secondItem="6jd-lS-xa9" secondAttribute="trailing" constant="11" id="F4n-tu-5lr"/>
+                                    <constraint firstAttribute="bottom" secondItem="fcf-PN-1Y7" secondAttribute="bottom" constant="16" id="GP2-x0-Eam"/>
+                                    <constraint firstAttribute="trailing" secondItem="Duz-R2-wCg" secondAttribute="trailing" constant="11" id="Xcs-r7-3xB"/>
+                                    <constraint firstItem="fcf-PN-1Y7" firstAttribute="leading" secondItem="2BP-aF-ULe" secondAttribute="leading" constant="15" id="x3K-p6-T6A"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cTn-o8-ebI" appends="YES" id="ccO-Fs-Ptb"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2BP-aF-ULe" firstAttribute="leading" secondItem="Hem-qu-klb" secondAttribute="leading" constant="20" symbolic="YES" id="0es-kY-4vp"/>
+                            <constraint firstAttribute="bottom" secondItem="2BP-aF-ULe" secondAttribute="bottom" constant="20" symbolic="YES" id="3n2-Pb-dvD"/>
+                            <constraint firstItem="2BP-aF-ULe" firstAttribute="top" secondItem="Hem-qu-klb" secondAttribute="top" constant="20" symbolic="YES" id="ZZV-sp-wzv"/>
+                            <constraint firstAttribute="trailing" secondItem="2BP-aF-ULe" secondAttribute="trailing" constant="20" symbolic="YES" id="xeo-5D-L2s"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="110"/>
+                    <connections>
+                        <outlet property="gradientView" destination="2BP-aF-ULe" id="1Cr-6l-1eD"/>
+                        <outlet property="incrementer" destination="Duz-R2-wCg" id="eE7-iS-Ld9"/>
+                        <outlet property="nameLabel" destination="fcf-PN-1Y7" id="8xI-bt-6DD"/>
+                        <outlet property="valueLabel" destination="6jd-lS-xa9" id="iGw-F2-WT1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAS-7P-8ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cTn-o8-ebI">
+                    <connections>
+                        <action selector="openApp:" destination="S3y-Kg-cDn" id="vsL-4k-bwV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="836" y="193.4032983508246"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Plus" width="33" height="33"/>
+    </resources>
+</document>

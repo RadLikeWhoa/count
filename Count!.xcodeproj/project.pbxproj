@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991AD4AF1EA93BF600CFF7CA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991AD4AE1EA93BF600CFF7CA /* NotificationCenter.framework */; };
+		991AD4B21EA93BF600CFF7CA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AD4B11EA93BF600CFF7CA /* TodayViewController.swift */; };
+		991AD4B51EA93BF600CFF7CA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991AD4B31EA93BF600CFF7CA /* MainInterface.storyboard */; };
+		991AD4B91EA93BF600CFF7CA /* Count! Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 991AD4AD1EA93BF600CFF7CA /* Count! Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		991EC53C1E6C85440011494B /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EC53B1E6C85440011494B /* CounterButton.swift */; };
 		99285FAE1EA0C56C0020DF90 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 99285FAD1EA0C56C0020DF90 /* Podfile */; };
 		99285FB01EA0CC260020DF90 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99285FAF1EA0CC260020DF90 /* Color.swift */; };
 		995059921EA14385005C166A /* CounterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995059911EA14385005C166A /* CounterList.swift */; };
 		99716C291E647B7F0016FEA6 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C281E647B7F0016FEA6 /* Counter.swift */; };
 		99716C2B1E647D2F0016FEA6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C2A1E647D2F0016FEA6 /* EditViewController.swift */; };
+		997442891EADEFC30087F4D5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C2F19A1E6A3E4D001A9946 /* GradientView.swift */; };
+		9974428A1EADEFD20087F4D5 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6BCF31E69BA18005C4AB3 /* Gradient.swift */; };
+		9974428B1EADEFD20087F4D5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99285FAF1EA0CC260020DF90 /* Color.swift */; };
+		9974428C1EADF0560087F4D5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D004191E6DB8BC00AD9321 /* UIColor.swift */; };
+		9974428D1EADF1FB0087F4D5 /* CounterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995059911EA14385005C166A /* CounterList.swift */; };
+		9974428E1EADF1FE0087F4D5 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99716C281E647B7F0016FEA6 /* Counter.swift */; };
+		997DC7311EAF54CB009EA438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C89FDF1E604713006D4398 /* Assets.xcassets */; };
+		997DC7321EAF5576009EA438 /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EC53B1E6C85440011494B /* CounterButton.swift */; };
 		9999312B1E7FD768004D491F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9999312D1E7FD768004D491F /* Localizable.strings */; };
 		9999313C1E7FDAF0004D491F /* intro-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 9999313E1E7FDAF0004D491F /* intro-alt.png */; };
 		999931401E7FDAF6004D491F /* intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 999931421E7FDAF6004D491F /* intro.png */; };
@@ -30,16 +42,50 @@
 		C2C6BCF61E69BAB4005C4AB3 /* ColorPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */; };
 		C2C6BCF81E69BEAA005C4AB3 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */; };
 		CF20E2422BCE297CCD4A4783 /* Pods_Count_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFDE63BE5A80BBD5A87A8B7 /* Pods_Count_.framework */; };
+		D5DFACCA094A0AECDAD6D4F4 /* Pods_Count__Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11510C85E051EF9BB0DA21C /* Pods_Count__Widget.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		991AD4B71EA93BF600CFF7CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99C89FCB1E604713006D4398 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 991AD4AC1EA93BF600CFF7CA;
+			remoteInfo = "Count! Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		991AD4BD1EA93BF600CFF7CA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				991AD4B91EA93BF600CFF7CA /* Count! Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2633296FAC694AE65290F9A6 /* Pods-Count! Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Count! Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Count! Widget/Pods-Count! Widget.release.xcconfig"; sourceTree = "<group>"; };
 		30E13D8819DA0ECFA2AAB8F2 /* Pods-Count!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Count!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Count!/Pods-Count!.debug.xcconfig"; sourceTree = "<group>"; };
+		6F418225A222E0A0974575D5 /* Pods-Count! Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Count! Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Count! Widget/Pods-Count! Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		991AD4AD1EA93BF600CFF7CA /* Count! Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Count! Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		991AD4AE1EA93BF600CFF7CA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		991AD4B11EA93BF600CFF7CA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		991AD4B41EA93BF600CFF7CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		991AD4B61EA93BF600CFF7CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991EC53B1E6C85440011494B /* CounterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		99285FAD1EA0C56C0020DF90 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99285FAF1EA0CC260020DF90 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		993812661EAF437B0039EAAE /* Count!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Count!.entitlements"; sourceTree = "<group>"; };
 		995059911EA14385005C166A /* CounterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterList.swift; sourceTree = "<group>"; };
 		99716C281E647B7F0016FEA6 /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		99716C2A1E647D2F0016FEA6 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		997DC7301EAF4DEE009EA438 /* Count! Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Count! Widget.entitlements"; sourceTree = "<group>"; };
 		999931251E7FD2B8004D491F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		999931261E7FD2B8004D491F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9999312C1E7FD768004D491F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -66,9 +112,19 @@
 		C2C6BCF51E69BAB4005C4AB3 /* ColorPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerTableViewController.swift; sourceTree = "<group>"; };
 		C2C6BCF71E69BEAA005C4AB3 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		DAFDE63BE5A80BBD5A87A8B7 /* Pods_Count_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Count_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11510C85E051EF9BB0DA21C /* Pods_Count__Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Count__Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		991AD4AA1EA93BF600CFF7CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991AD4AF1EA93BF600CFF7CA /* NotificationCenter.framework in Frameworks */,
+				D5DFACCA094A0AECDAD6D4F4 /* Pods_Count__Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99C89FD01E604713006D4398 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +141,8 @@
 			children = (
 				30E13D8819DA0ECFA2AAB8F2 /* Pods-Count!.debug.xcconfig */,
 				9FAE013A3D7ECC59FA64F89E /* Pods-Count!.release.xcconfig */,
+				6F418225A222E0A0974575D5 /* Pods-Count! Widget.debug.xcconfig */,
+				2633296FAC694AE65290F9A6 /* Pods-Count! Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -93,8 +151,21 @@
 			isa = PBXGroup;
 			children = (
 				DAFDE63BE5A80BBD5A87A8B7 /* Pods_Count_.framework */,
+				991AD4AE1EA93BF600CFF7CA /* NotificationCenter.framework */,
+				F11510C85E051EF9BB0DA21C /* Pods_Count__Widget.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		991AD4B01EA93BF600CFF7CA /* Count! Widget */ = {
+			isa = PBXGroup;
+			children = (
+				997DC7301EAF4DEE009EA438 /* Count! Widget.entitlements */,
+				991AD4B11EA93BF600CFF7CA /* TodayViewController.swift */,
+				991AD4B31EA93BF600CFF7CA /* MainInterface.storyboard */,
+				991AD4B61EA93BF600CFF7CA /* Info.plist */,
+			);
+			path = "Count! Widget";
 			sourceTree = "<group>";
 		};
 		991EC53A1E6C84640011494B /* Controls */ = {
@@ -152,6 +223,7 @@
 			children = (
 				99285FAD1EA0C56C0020DF90 /* Podfile */,
 				99C89FD51E604713006D4398 /* Count! */,
+				991AD4B01EA93BF600CFF7CA /* Count! Widget */,
 				99C89FD41E604713006D4398 /* Products */,
 				7F8E0E4431D92CE9B895BDAF /* Pods */,
 				87EF0D3831766B1F736B987D /* Frameworks */,
@@ -162,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				99C89FD31E604713006D4398 /* Count!.app */,
+				991AD4AD1EA93BF600CFF7CA /* Count! Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +242,7 @@
 		99C89FD51E604713006D4398 /* Count! */ = {
 			isa = PBXGroup;
 			children = (
+				993812661EAF437B0039EAAE /* Count!.entitlements */,
 				9999312F1E7FDA21004D491F /* Images */,
 				99D004181E6DB8B100AD9321 /* Extensions */,
 				991EC53A1E6C84640011494B /* Controls */,
@@ -196,6 +270,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		991AD4AC1EA93BF600CFF7CA /* Count! Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 991AD4BC1EA93BF600CFF7CA /* Build configuration list for PBXNativeTarget "Count! Widget" */;
+			buildPhases = (
+				8AB01461FA9551EFE181D2A7 /* [CP] Check Pods Manifest.lock */,
+				991AD4A91EA93BF600CFF7CA /* Sources */,
+				991AD4AA1EA93BF600CFF7CA /* Frameworks */,
+				991AD4AB1EA93BF600CFF7CA /* Resources */,
+				A5AF135AA1218AB16EF12FCD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Count! Widget";
+			productName = "Count! Widget";
+			productReference = 991AD4AD1EA93BF600CFF7CA /* Count! Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		99C89FD21E604713006D4398 /* Count! */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99C89FE71E604713006D4398 /* Build configuration list for PBXNativeTarget "Count!" */;
@@ -206,10 +299,12 @@
 				99C89FD11E604713006D4398 /* Resources */,
 				C2519294403540D07C7E5C36 /* [CP] Embed Pods Frameworks */,
 				3BF32AD9D6C92DE5D0107BD5 /* [CP] Copy Pods Resources */,
+				991AD4BD1EA93BF600CFF7CA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				991AD4B81EA93BF600CFF7CA /* PBXTargetDependency */,
 			);
 			name = "Count!";
 			productName = "Count!";
@@ -222,13 +317,28 @@
 		99C89FCB1E604713006D4398 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				TargetAttributes = {
+					991AD4AC1EA93BF600CFF7CA = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 3E54DVN8HL;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					99C89FD21E604713006D4398 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3E54DVN8HL;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -247,11 +357,21 @@
 			projectRoot = "";
 			targets = (
 				99C89FD21E604713006D4398 /* Count! */,
+				991AD4AC1EA93BF600CFF7CA /* Count! Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		991AD4AB1EA93BF600CFF7CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997DC7311EAF54CB009EA438 /* Assets.xcassets in Resources */,
+				991AD4B51EA93BF600CFF7CA /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99C89FD11E604713006D4398 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +420,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Count!/Pods-Count!-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8AB01461FA9551EFE181D2A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5AF135AA1218AB16EF12FCD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Count! Widget/Pods-Count! Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C2519294403540D07C7E5C36 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +468,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		991AD4A91EA93BF600CFF7CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997442891EADEFC30087F4D5 /* GradientView.swift in Sources */,
+				9974428B1EADEFD20087F4D5 /* Color.swift in Sources */,
+				997DC7321EAF5576009EA438 /* CounterButton.swift in Sources */,
+				991AD4B21EA93BF600CFF7CA /* TodayViewController.swift in Sources */,
+				9974428A1EADEFD20087F4D5 /* Gradient.swift in Sources */,
+				9974428D1EADF1FB0087F4D5 /* CounterList.swift in Sources */,
+				9974428C1EADF0560087F4D5 /* UIColor.swift in Sources */,
+				9974428E1EADF1FE0087F4D5 /* Counter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99C89FCF1E604713006D4398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,7 +506,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		991AD4B81EA93BF600CFF7CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 991AD4AC1EA93BF600CFF7CA /* Count! Widget */;
+			targetProxy = 991AD4B71EA93BF600CFF7CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		991AD4B31EA93BF600CFF7CA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				991AD4B41EA93BF600CFF7CA /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		9999312D1E7FD768004D491F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -400,6 +581,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		991AD4BA1EA93BF600CFF7CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F418225A222E0A0974575D5 /* Pods-Count! Widget.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Count! Widget/Count! Widget.entitlements";
+				DEVELOPMENT_TEAM = 3E54DVN8HL;
+				INFOPLIST_FILE = "Count! Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sacha.count.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		991AD4BB1EA93BF600CFF7CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2633296FAC694AE65290F9A6 /* Pods-Count! Widget.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Count! Widget/Count! Widget.entitlements";
+				DEVELOPMENT_TEAM = 3E54DVN8HL;
+				INFOPLIST_FILE = "Count! Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sacha.count.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		99C89FE51E604713006D4398 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -499,11 +714,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30E13D8819DA0ECFA2AAB8F2 /* Pods-Count!.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Count!/Count!.entitlements";
 				DEVELOPMENT_TEAM = 3E54DVN8HL;
 				INFOPLIST_FILE = "Count!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.sacha.Count-";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sacha.count;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -513,11 +730,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FAE013A3D7ECC59FA64F89E /* Pods-Count!.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Count!/Count!.entitlements";
 				DEVELOPMENT_TEAM = 3E54DVN8HL;
 				INFOPLIST_FILE = "Count!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.sacha.Count-";
+				PRODUCT_BUNDLE_IDENTIFIER = me.sacha.count;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -526,6 +745,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		991AD4BC1EA93BF600CFF7CA /* Build configuration list for PBXNativeTarget "Count! Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				991AD4BA1EA93BF600CFF7CA /* Debug */,
+				991AD4BB1EA93BF600CFF7CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		99C89FCE1E604713006D4398 /* Build configuration list for PBXProject "Count!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

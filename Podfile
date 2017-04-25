@@ -6,3 +6,9 @@ target 'Count!' do
     pod 'RealmSwift'
 
 end
+
+target 'Count! Widget' do
+    
+    pod 'RealmSwift'
+    
+end

@@ -13,21 +13,28 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let realm = try! Realm()
+    var realm: Realm?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UserDefaults.standard.register(defaults: [
             "helpViewed": false
         ])
         
-        if realm.objects(CounterList.self).count == 0 {
-            try! realm.write {
-                self.realm.add(CounterList())
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.me.sacha.count")!
+        let realmPath = directory.appendingPathComponent("default.realm")
+        
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(fileURL: realmPath)
+        
+        realm = try! Realm()
+        
+        if realm!.objects(CounterList.self).count == 0 {
+            try! realm!.write {
+                self.realm!.add(CounterList())
             }
         }
         
-        if realm.objects(Gradient.self).count == 0 {
-            try! realm.write {
+        if realm!.objects(Gradient.self).count == 0 {
+            try! realm!.write {
                 let defaultGradients = [
                     Gradient(label: "Sha La La", from: Color(hex: 0xE29587), to: Color(hex: 0xD66D75)),
                     Gradient(label: "Cherry", from: Color(hex: 0xF45C43), to: Color(hex: 0xEB3349)),
@@ -41,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     Gradient(label: "Mojito", from: Color(hex: 0x93F9B9), to: Color(hex: 0x1D976C))
                 ]
                 
-                self.realm.add(defaultGradients)
+                self.realm!.add(defaultGradients)
             }
         }
         
@@ -50,6 +57,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         UserDefaults.standard.synchronize()
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        let navigationController = window?.rootViewController as! UINavigationController
+        (navigationController.topViewController as! UITableViewController).tableView.reloadData()
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let navigationController = window?.rootViewController as! UINavigationController
+        navigationController.popViewController(animated: false)
+        
+        return true
     }
 
 }

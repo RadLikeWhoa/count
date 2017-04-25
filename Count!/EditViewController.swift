@@ -44,6 +44,10 @@ class EditViewController: UITableViewController {
     private func configureView() {
         if !isNew {
             navigationItem.title = NSLocalizedString("Edit_Counter_Title", comment: "The title for editing an existing counter")
+        } else {
+            try! realm.write {
+                realm.add(counter)
+            }
         }
         
         if let offsetTextField = offsetTextField {
@@ -59,7 +63,11 @@ class EditViewController: UITableViewController {
             let gradients = realm.objects(Gradient.self)
             let random = Int(arc4random_uniform(UInt32(gradients.count)))
             
-            counter.gradient = gradients[random]
+            NSLog("\(gradients.count)")
+            
+            try! realm.write {
+                counter.gradient = gradients[random]
+            }
         }
         
         colorize(with: counter.gradient!)
@@ -98,12 +106,6 @@ class EditViewController: UITableViewController {
         
         titleTextField.resignFirstResponder()
         offsetTextField.resignFirstResponder()
-        
-        if isNew {
-            try! realm.write() {
-                realm.add(counter)
-            }
-        }
         
         performSegue(withIdentifier: isNew ? "unwindToMaster" : "unwindToDetail", sender: self)
     }
