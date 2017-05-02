@@ -61,7 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         let navigationController = window?.rootViewController as! UINavigationController
-        (navigationController.topViewController as! UITableViewController).tableView.reloadData()
+        
+        if let tvc = navigationController.topViewController as? UITableViewController {
+            tvc.tableView.reloadData()
+        }
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
