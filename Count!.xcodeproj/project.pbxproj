@@ -332,7 +332,6 @@
 					};
 					99C89FD21E604713006D4398 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3E54DVN8HL;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -717,7 +716,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Count!/Count!.entitlements";
-				DEVELOPMENT_TEAM = 3E54DVN8HL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Count!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sacha.count;
@@ -733,7 +732,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Count!/Count!.entitlements";
-				DEVELOPMENT_TEAM = 3E54DVN8HL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Count!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.sacha.count;

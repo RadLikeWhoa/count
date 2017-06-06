@@ -218,7 +218,7 @@ class MasterViewController: UITableViewController {
             
             tableView.backgroundView = emptyLabel
             tableView.addGestureRecognizer(emptyStateGesture!)
-        } else {
+        } else if tableView.backgroundView != nil {
             tableView.backgroundView = nil
             
             if let emptyStateGesture = emptyStateGesture {

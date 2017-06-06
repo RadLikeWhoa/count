@@ -63,8 +63,6 @@ class EditViewController: UITableViewController {
             let gradients = realm.objects(Gradient.self)
             let random = Int(arc4random_uniform(UInt32(gradients.count)))
             
-            NSLog("\(gradients.count)")
-            
             try! realm.write {
                 counter.gradient = gradients[random]
             }
